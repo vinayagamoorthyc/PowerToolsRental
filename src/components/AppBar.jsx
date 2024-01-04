@@ -38,6 +38,7 @@ function AppBar() {
                 All Products</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link hidden={false} style={{fontWeight:"bold"}} href='/ProfilePage'>Profile</Nav.Link>
+            <Nav.Link hidden={false} style={{fontWeight:"bold"}} href='/ProfilePage'>Profile</Nav.Link>
           </Nav>
       
           <Nav>
