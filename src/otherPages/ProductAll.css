@@ -6,7 +6,7 @@
     align-items: center;
     border: none;
     border-radius: 5px;
-    width: 30%;
+    width: 430px;
     -webkit-box-shadow: 0px 0px 15px 0px rgba(142, 142, 144, 1);
     -moz-box-shadow: 0px 0px 15px 0px rgba(142, 142, 144, 1);
     box-shadow: 0px 0px 15px 0px rgba(142, 142, 144, 1);
@@ -18,6 +18,7 @@
     justify-content: space-around;
     align-items: center;
     font-family: Montserrat, sans-serif;
+    padding: 10px;
   }
 
 /* -----------------------------button for view-------------- */
