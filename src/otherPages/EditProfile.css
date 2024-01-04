@@ -1,0 +1,139 @@
+
+.edit_image{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.uploader{
+  cursor: pointer;
+  padding: 10px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  color: #000000;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: Montserrat, sans-serif;
+}
+
+.image-preview {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.form-container2 {
+  margin-top: 8px;
+  font-family: Montserrat, sans-serif;
+  max-width: 400px;
+  background-color: #c6c6c63a;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #212121;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
+}
+
+.form-container2 button:active {
+  scale: 0.95;
+}
+
+.form-container2 .logo-container {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: Montserrat, sans-serif;
+}
+
+.form-container2 .form2 {
+  display: flex;
+  flex-direction: column;
+  font-family: Montserrat, sans-serif;
+
+}
+
+.form-container2 .form-group2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form-container2 .form-group2 label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: start;
+}
+
+.form-container2 .form-group2 input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-family: inherit;
+  border: 1px solid #ccc;
+}
+
+.form-container2 .form-group2 input::placeholder {
+  opacity: 0.5;
+}
+
+.form-container2 .form-group2 input:focus {
+  outline: none;
+  border-color: #ffc400;
+}
+
+.form-container2 .form-submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  color: #ffc400;
+  background-color: #212121;
+  border: none;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: inherit;
+  gap: 8px;
+  margin: 12px 0;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.084), 0px 2px 3px rgba(0, 0, 0, 0.168);
+}
+
+.form-container2 .form-submit-btn:hover {
+  background-color: #313131;
+}
+
+.form-container2 .link {
+  color: #1778f2;
+  text-decoration: none;
+}
+
+.form-container2 .signup-link {
+  align-self: center;
+  font-weight: 500;
+}
+
+.form-container2 .signup-link .link {
+  font-weight: 400;
+}
+
+.form-container2 .link:hover {
+  text-decoration: underline;
+}
+

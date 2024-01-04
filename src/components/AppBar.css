@@ -1,0 +1,111 @@
+
+.appbar{
+    width: 100%;
+    position: sticky;
+    box-shadow: 0px 0px 120px 3px rgb(174, 174, 174);
+    border-radius: 50px;
+    font-family: Montserrat, sans-serif;
+  }
+
+.checkout_btn{
+  position: relative;
+  font-size: 1.2em;
+  padding: 0.7em 1.4em;
+  background-color: #ffc506;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.5em;
+  color: #000000;
+  box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);
+  width: 90%;
+  margin-bottom: 15px;
+  font-family: Montserrat, sans-serif;
+}
+
+.checkout_btn::before {
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%, #ffc400 50%, #ffc400 60%);
+  border-radius: 0 0 0.5em 0;
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.checkout_btn:hover::before {
+  width: 1.6em;
+  height: 1.6em;
+}
+
+.checkout_btn:active {
+  box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);
+  transform: translate(0.1em, 0.1em);
+}
+  
+.cart_button{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(44, 44, 44);
+    border-radius: 50%;
+    cursor: pointer;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
+    border: none;
+  }
+  
+  .bell {
+    width: 19px;
+    height: 19px;
+  }
+  
+  .bell path {
+    fill: #ffc506;
+  }
+  
+  .cart_button:hover {
+    background-color: rgb(56, 56, 56);
+  }
+  
+  .cart_button:hover .bell {
+    animation: bellRing 0.9s both;
+  }
+  
+  /* bell ringing animation keyframes*/
+  @keyframes bellRing {
+    0%,
+    100% {
+      transform-origin: top;
+    }
+  
+    15% {
+      transform: rotateZ(10deg);
+    }
+  
+    30% {
+      transform: rotateZ(-10deg);
+    }
+  
+    45% {
+      transform: rotateZ(5deg);
+    }
+  
+    60% {
+      transform: rotateZ(-5deg);
+    }
+  
+    75% {
+      transform: rotateZ(2deg);
+    }
+  }
+  
+  .cart_button:active {
+    transform: scale(0.8);
+  }
+  

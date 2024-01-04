@@ -1,0 +1,84 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.about_card{
+    width: 70%;
+    height: 290px;
+    background: #000000;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .about_inner_text {
+    font-family: Montserrat, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+    z-index: 1;
+    color: #ffc400;
+  }
+  
+  .about_textBox{
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: 0.5s ease-in-out;
+    z-index: 2;
+  }
+  
+  .about_textBox> .about_text{
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+  }
+  
+  .about_textBox> .about_head {
+    color: #ffc506;
+    font-family: Montserrat, sans-serif;
+    font-size: 30px;
+  }
+  
+  .about_textBox> span {
+    font-size: 15px;
+    color: #ffc506;
+    text-align: center;
+    width: 80%;
+    font-family: Montserrat, sans-serif;
+  }
+  
+  .about_card:hover > .about_textBox{
+    opacity: 1;
+  }
+  
+  .about_card:hover .about_inner_text{
+    filter: blur(7px);
+    animation: anim 3s infinite;
+  }
+  
+  @keyframes anim {
+    0% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-20px);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }

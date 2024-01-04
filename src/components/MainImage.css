@@ -1,0 +1,22 @@
+.MainImage{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.mainimage_details-view{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    width: 64%;
+}

@@ -1,0 +1,278 @@
+
+.title{
+  font-family: Montserrat, sans-serif;
+  text-align: center;
+    margin-top: 30px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    padding: 10px;
+    color: #000000;
+    position: relative;
+    transition: .5s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000000;
+    color: #ffc506;
+}
+.title::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 0;
+  background-color: #ffc506;
+  transition: .5s ease;
+}
+.title:hover {
+  color: #000000;
+  transition-delay: .5s;
+}
+
+.title:hover::before {
+  width: 100%;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #ffc506;
+  transition: .4s ease;
+  z-index: -1;
+}
+
+.title:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: rgb(0, 0, 0);
+}
+
+
+
+.card {
+  position: relative;
+  width: 220px;
+  height: 250px;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ffc400bd;
+  box-shadow: 0px 0px 10px 7px rgba(0,0,0,0.1);
+-webkit-box-shadow: 0px 0px 10px 7px rgba(0,0,0,0.1);
+-moz-box-shadow: 0px 0px 10px 7px rgba(0,0,0,0.1);
+}
+
+.card_grid{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  gap: 15px;
+} 
+
+
+.text .h3 {
+  font-family: Montserrat, sans-serif;
+  font-size: medium;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+}
+
+.text .p {
+  font-family: system-ui;
+  color: #999999;
+  font-size: 13px;
+  margin: 0px;
+  text-align: center;
+  padding: 5px;
+}
+
+.icon-box {
+  margin: 10px;
+  padding: 12px;
+  background-color: #7980c5;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.icon-box .span {
+  font-family: system-ui;
+  font-size: small;
+  font-weight: 500;
+  color: #fff;
+}/*# sourceMappingURL=index.css.map */
+
+.ui-btn {
+    border-radius: 25px;
+    --btn-default-bg: rgb(41, 41, 41);
+    --btn-padding: 12px 10px;
+    --btn-hover-bg: rgb(51, 51, 51);
+    --btn-transition: .3s;
+    --btn-letter-spacing: .1rem;
+    --btn-animation-duration: 1.2s;
+    --btn-shadow-color: rgba(0, 0, 0, 0.137);
+    --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+    --hover-btn-color: #ffc400;
+    --default-btn-color: #ffc400;
+    --font-size: 13px;
+    /* 👆 this field should not be empty */
+    --font-weight: 600;
+    --font-family: Montserrat, sans-serif;
+    /* 👆 this field should not be empty */
+  }
+  
+  /* button settings 👆 */
+  
+  .ui-btn {
+    box-sizing: border-box;
+    padding: var(--btn-padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--default-btn-color);
+    font: var(--font-weight) var(--font-size) var(--font-family);
+    background: var(--btn-default-bg);
+    border: none;
+    cursor: pointer;
+    transition: var(--btn-transition);
+    overflow: hidden;
+    box-shadow: var(--btn-shadow);
+    height: 39px;
+  }
+  
+  .ui-btn span {
+    letter-spacing: var(--btn-letter-spacing);
+    transition: var(--btn-transition);
+    box-sizing: border-box;
+    position: relative;
+    background: inherit;
+  }
+  
+  .ui-btn span::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    background: inherit;
+  }
+  
+  .ui-btn:hover, .ui-btn:focus {
+    background: var(--btn-hover-bg);
+  }
+  
+  .ui-btn:hover span, .ui-btn:focus span {
+    color: var(--hover-btn-color);
+  }
+  
+  .ui-btn:hover span::before, .ui-btn:focus span::before {
+    animation: chitchat linear both var(--btn-animation-duration);
+  }
+  
+  @keyframes chitchat {
+    0% {
+      content: "#";
+    }
+  
+    5% {
+      content: ".";
+    }
+  
+    10% {
+      content: "^{";
+    }
+  
+    15% {
+      content: "-!";
+    }
+  
+    20% {
+      content: "#$_";
+    }
+  
+    25% {
+      content: "№:0";
+    }
+  
+    30% {
+      content: "#{+.";
+    }
+  
+    35% {
+      content: "@}-?";
+    }
+  
+    40% {
+      content: "?{4@%";
+    }
+  
+    45% {
+      content: "=.,^!";
+    }
+  
+    50% {
+      content: "?2@%";
+    }
+  
+    55% {
+      content: "\;1}]";
+    }
+  
+    60% {
+      content: "?{%:%";
+      right: 0;
+    }
+  
+    65% {
+      content: "|{f[4";
+      right: 0;
+    }
+  
+    70% {
+      content: "{4%0%";
+      right: 0;
+    }
+  
+    75% {
+      content: "'1_0<";
+      right: 0;
+    }
+  
+    80% {
+      content: "{0%";
+      right: 0;
+    }
+  
+    85% {
+      content: "]>'";
+      right: 0;
+    }
+  
+    90% {
+      content: "4";
+      right: 0;
+    }
+  
+    95% {
+      content: "2";
+      right: 0;
+    }
+  
+    100% {
+      content: "";
+      right: 0;
+    }
+  }

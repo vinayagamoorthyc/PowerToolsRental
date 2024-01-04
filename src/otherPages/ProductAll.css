@@ -1,0 +1,143 @@
+.all_cart_view{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    width: 30%;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(142, 142, 144, 1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(142, 142, 144, 1);
+    box-shadow: 0px 0px 15px 0px rgba(142, 142, 144, 1);
+}
+
+.all_cart_details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Montserrat, sans-serif;
+  }
+
+/* -----------------------------button for view-------------- */
+
+.but{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    color: #0f1923;
+    cursor: pointer;
+    position: relative;
+    padding: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 11px;
+    transition: all .15s ease;
+  }
+  
+  .but::before,
+  .but::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: calc(50% - 5px);
+    border: 1px solid #7D8082;
+    transition: all .15s ease;
+  }
+  
+  .but::before {
+    top: 0;
+    border-bottom-width: 0;
+  }
+  
+  .but::after {
+    bottom: 0;
+    border-top-width: 0;
+  }
+  
+  .but:active,
+  .but:focus {
+    outline: none;
+  }
+  
+  .but:active::before,
+  .but:active::after {
+    right: 3px;
+    left: 3px;
+  }
+  
+  .but:active::before {
+    top: 3px;
+  }
+  
+  .but:active::after {
+    bottom: 3px;
+  }
+  
+  .but_lg{
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #0f1923;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 0px 1px transparent;
+  }
+  
+  .but_lg::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background-color: #0f1923;
+  }
+  
+  .but_lg::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 4px;
+    height: 4px;
+    background-color: #0f1923;
+    transition: all .2s ease;
+  }
+  
+  .but_sl {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: -1px;
+    left: -8px;
+    width: 0;
+    background-color: #ffc400;
+    transform: skew(-15deg);
+    transition: all .2s ease;
+  }
+  
+  .but_text {
+    position: relative;
+  }
+  
+  .but:hover {
+    color: #0f1923;
+  }
+  
+  .but:hover .but_sl {
+    width: calc(100% + 15px);
+  }
+  
+  .but:hover .but_lg::after {
+    background-color: #fff;
+  }
+  

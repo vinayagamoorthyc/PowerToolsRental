@@ -1,0 +1,8 @@
+.all_view{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 25px;
+    gap: 15px;
+}

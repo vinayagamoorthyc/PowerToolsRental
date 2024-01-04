@@ -1,0 +1,186 @@
+.Back_Btn{
+  font-family: Montserrat, sans-serif;
+  display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 39px;
+    height: 39px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: #ffc506;
+  }
+  
+  /* plus sign */
+  .back_icon{
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .back_icon svg {
+    width: 30px;
+  }
+  
+  /* text */
+  .back_text{
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: rgb(0, 0, 0);
+    font-size: 1.0em;
+    font-weight: 600;
+    transition-duration: .3s;
+    text-decoration: none;
+  }
+  /* hover effect on button width */
+  .Back_Btn:hover {
+    width: 100px;
+    border-radius: 50px;
+    transition-duration: .3s;
+  }
+  
+  .Back_Btn:hover .back_icon{
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 7px;
+  }
+  /* hover effect button's text */
+  .Back_Btn:hover .back_text{
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .Back_Btn:active {
+    transform: translate(2px ,2px);
+  }
+
+  .pro_view{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: start;
+    align-items: center;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.088);
+  }
+
+  .pro_details_view{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: start;
+    width: 40%;
+    font-family: Montserrat, sans-serif;
+  }
+
+  /* ---------------------rating style----------------- */
+
+  .rating {
+    display: inline-block;
+  }
+  
+  .rating input {
+    display: none;
+  }
+  
+  .rating label {
+    float: right;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s;
+  }
+  
+  .rating label:before {
+    content: '\2605';
+    font-size: 30px;
+  }
+  
+  .rating input:checked ~ label,
+  .rating label:hover,
+  .rating label:hover ~ label {
+    color: #ffc506;
+    transition: color 0.3s;
+  }
+  
+  /* ---------------------------addCart style----------------------------- */
+
+  .cssbuttons-io-button {
+    background: #ffc506;
+    color: rgb(0, 0, 0);
+    font-family: Montserrat, sans-serif;
+    padding: 0em;
+    padding-left: 0.6em;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 1.0em;
+    border: 2px solid rgba(0, 0, 0, 0.348);
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #ffc506;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+  }
+  
+  .cssbuttons-io-button .icon {
+    background: rgb(0, 0, 0);
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.7em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #ffc506;
+    right: 0.3em;
+    transition: all 0.7s;
+  }
+  
+  .cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+  }
+  
+  .cssbuttons-io-button .icon i {
+    width: 1.1em;
+    transition: transform 1.5s;
+    color: #ffc506;
+  }
+  
+  .cssbuttons-io-button:hover .icon i {
+    transform: translateX(0.1em);
+  }
+  
+  .cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+  }
+  
+  /* ----------------------------------overview-------------------------------- */
+
+  .overview{
+    margin-left: 10px;
+    font-family: Montserrat, sans-serif;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  /* -------------------------------------------------quantity------------------------------ */
+
+  .number-quantity{
+    width: 13%;
+    border: 1.9px solid rgba(0, 0, 0, 0.707);
+  }

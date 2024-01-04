@@ -1,0 +1,97 @@
+.reviews{
+    display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  padding: 1rem;
+  font-family: Montserrat, sans-serif;
+}
+
+.task {
+    position: relative;
+    color: #2e2e2f;
+    cursor: text;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 7px rgba(0,0,0,0.1);
+-webkit-box-shadow: 0px 0px 10px 7px rgba(0,0,0,0.1);
+-moz-box-shadow: 0px 0px 10px 7px rgba(0,0,0,0.1);
+    border-radius: 9px;
+    margin-bottom: 1rem;
+    border: 3px dashed transparent;
+    max-width: 350px;
+  }
+  
+  .task:hover {
+    box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+    border-color: rgba(162, 179, 207, 0.2) !important;
+  }
+  
+  .task p {
+    font-size: 15px;
+    margin: 1.2rem 0;
+    text-align: left;
+  }
+  
+  .tag {
+    border-radius: 100px;
+    padding: 4px 13px;
+    font-size: 12px;
+    color: #000000;
+    background-color: #ffc506;
+  }
+  
+  .tags {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .options {
+    background: transparent;
+    border: 0;
+    color: #c4cad3;
+    font-size: 17px;
+  }
+  
+  .options i {
+    fill: #9fa4aa;
+    width: 20px;
+  }
+  
+  .stats {
+    position: relative;
+    width: 100%;
+    color: #000000;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .stats div {
+    margin-right: 1rem;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .viewer span {
+    height: 30px;
+    width: 30px;
+    background-color: #ffc506;
+    margin-right: -10px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    color: #000000;
+    padding: 2px;
+  }
