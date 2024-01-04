@@ -18,9 +18,12 @@
     "react-scripts": "5.0.1",
     "swiper": "^11.0.5",
     "typeface-montserrat": "^1.1.13",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "homepage": "https://vinayagamoorthyc.github.io/PowerToolsRental"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
