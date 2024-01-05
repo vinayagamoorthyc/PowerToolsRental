@@ -11,7 +11,7 @@ export default function About_Nav() {
     <div>
       <center>
     <div fluid className='appbar' id='topview'>
-      <Navbar sticky='top' expand="lg" className="bg-body-tertiary shadow-lg p-2 mb-1 bg-body rounded">
+      <Navbar fixed='top' expand="lg" className="bg-body-tertiary shadow-lg p-2 mb-1 bg-body rounded">
         <Navbar.Brand href="#"><img src="https://i.postimg.cc/ZKR8bvHf/Power-Tools.png" alt="" width={100}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

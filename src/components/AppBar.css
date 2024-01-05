@@ -1,10 +1,8 @@
 
 .appbar{
     width: 100%;
-    position: sticky;
-    box-shadow: 0px 0px 120px 3px rgb(174, 174, 174);
-    border-radius: 50px;
     font-family: Montserrat, sans-serif;
+    z-index: 1;
   }
 
 .checkout_btn{
