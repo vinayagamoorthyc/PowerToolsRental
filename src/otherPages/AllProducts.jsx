@@ -45,7 +45,7 @@ export default function AllProducts() {
         }}>
             <NavDropdown
             title={`Filter by ${filter}`} 
-            onSelect={handleFilterChange} style={{color:"#ffc400",fontFamily:"Montserrat, sans-serif"}}>
+            onSelect={handleFilterChange} style={{color:"#ffc400",fontFamily:"  Montserrat, sans-serif"}}>
               <NavDropdown.Item eventKey="all">All</NavDropdown.Item>
               <NavDropdown.Item eventKey="Cutter">Cutter</NavDropdown.Item>
               <NavDropdown.Item eventKey="Triller">Triller</NavDropdown.Item>
