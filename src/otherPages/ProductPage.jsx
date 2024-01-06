@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './/ProductPage.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Tab from 'react-bootstrap/Tab';
@@ -6,21 +6,25 @@ import Tabs from 'react-bootstrap/Tabs';
 import pro_image from "../asset/product1.jpg"
 import Footer from '../components/Footer';
 import 'typeface-montserrat';
+import Aos from 'aos';
 
 export default function ProductPage() {
+  useEffect(()=>{
+    Aos.init({duration: 1500});
+    }, []);
   return (
     <div>
-      <div style={{background:"black", padding:"5px"}}>
-        <button class="Back_Btn">
+      <div style={{background:"black", padding:"5px",position:"fixed",width:"100%",zIndex:"1"}}>
+        <a href='/'><button class="Back_Btn">
           <a href='/' class="back_icon"><svg class="svg-icon" viewBox="0 0 20 20">
 							<path fill="black" d="M8.388,10.049l4.76-4.873c0.303-0.31,0.297-0.804-0.012-1.105c-0.309-0.304-0.803-0.293-1.105,0.012L6.726,9.516c-0.303,0.31-0.296,0.805,0.012,1.105l5.433,5.307c0.152,0.148,0.35,0.223,0.547,0.223c0.203,0,0.406-0.08,0.559-0.236c0.303-0.309,0.295-0.803-0.012-1.104L8.388,10.049z"></path>
 						  </svg></a>
-          <a href='/' class="back_text">Back</a>
-        </button>
+          <a href='/' class="back_text">Home</a>
+        </button></a>
         </div>
         <div className='pro_view'>
-          <div>
-            <img className='pro_img' src={pro_image} width={459} alt="" />
+          <div  data-aos="zoom-in">
+            <img className='pro_img' src={pro_image} width={360} alt="" />
           </div>
           <div className='pro_details_view'>
             <div>

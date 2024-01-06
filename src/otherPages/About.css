@@ -19,6 +19,7 @@
     justify-content: center;
     color: white;
     transition: 0.2s ease-in-out;
+    overflow: hidden;
   }
   
   .about_inner_text {

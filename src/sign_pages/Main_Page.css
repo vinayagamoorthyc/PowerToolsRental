@@ -1,11 +1,13 @@
 ::-webkit-scrollbar{
     background: rgb(255, 255, 255);
     width: 5px;
+    height: 4.5px;
 }
 ::-webkit-scrollbar-thumb{
-    background: #000000;
+    background: #7e7e7e;
     border-radius: 0px;
 }
+
 
 .mainPage{
     

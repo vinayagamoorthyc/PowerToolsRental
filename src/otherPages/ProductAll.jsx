@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./ProductAll.css";
 import { Link } from 'react-router-dom';
 import 'typeface-montserrat';
+import Aos from 'aos';
 
 export default function ProductAll(props) {
+    useEffect(()=>{
+        Aos.init({duration: 2000});
+        }, []);
   return (
-    <div className='all_cart_view'>
+    <div className='all_cart_view' data-aos="zoom-in">
         <div>
             <img src={props.url} width={130} alt="" />
         </div>

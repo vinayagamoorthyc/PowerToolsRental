@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './/SignIn.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link } from 'react-router-dom';
 import 'typeface-montserrat';
+import Aos from 'aos';
 
 export default function SignIn() {
+  useEffect(()=>{
+    Aos.init({duration: 1500});
+    }, []);
   return (
     <div className='SignIn_page'>
       <div class="holder">
@@ -21,7 +25,7 @@ export default function SignIn() {
       </button>
     </div>
     <div>
-    <div class="signIn_container">
+    <div class="signIn_container" data-aos="zoom-in">
     <div class="content">
     <img src="https://i.postimg.cc/ZKR8bvHf/Power-Tools.png" width={140} alt="" />
       <form class="content__form">

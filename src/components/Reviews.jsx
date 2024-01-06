@@ -3,10 +3,11 @@ import './/Reviews.css';
 import 'typeface-montserrat';
 
 export default function Reviews() {
+  
   return (
     <center>
     <div className='reviews'>
-      <div class="task">
+      <div class="task" >
   <div class="tags">
     <span class="tag">Randip Leon</span>
     <button class="options">
@@ -32,7 +33,7 @@ export default function Reviews() {
     </div>
     </div>
     </div>
-    <div class="task">
+    <div class="task" >
   <div class="tags">
     <span class="tag">Praveen</span>
     <button class="options">

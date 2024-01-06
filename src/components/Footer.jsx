@@ -2,12 +2,11 @@ import React from 'react';
 import {
   MDBFooter,
   MDBContainer,
-  MDBIcon,
-  MDBBtn,
   MDBInput,
   MDBCol,
   MDBRow
 } from 'mdb-react-ui-kit';
+import Button from 'react-bootstrap/Button';
 import 'typeface-montserrat';
 
 export default function Footer() {
@@ -15,29 +14,17 @@ export default function Footer() {
     <MDBFooter style={{fontFamily:"Montserrat, sans-serif"}} className='text-center' id='footer' color='warning' bgColor='black'>
       <MDBContainer className='p-4'>
         <section className='mb-4'>
-          <MDBBtn outline color="warning" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='facebook-f' />
-          </MDBBtn>
+          <a href="https://github.com/vinayagamoorthyc?tab=repositories/"><Button variant="outline-warning"><i class="bi bi-github"></i></Button></a>{' '}&nbsp;
 
-          <MDBBtn outline color="warning" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='twitter' />
-          </MDBBtn>
+          <a href="https://www.facebook.com/profile.php?id=100037768420533"><Button variant="outline-warning"><i class="bi bi-facebook"></i></Button></a>{' '}&nbsp;
 
-          <MDBBtn outline color="warning" floating className='m-1' href='https://www.google.com/' role='button'>
-            <MDBIcon fab icon='google' />
-          </MDBBtn>
+          <a href="https://twitter.com/Vinayaga2709/"><Button variant="outline-warning"><i class="bi bi-twitter-x"></i></Button></a>{' '}&nbsp;
 
-          <MDBBtn outline color="warning" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='instagram' />
-          </MDBBtn>
+          <a href="https://www.instagram.com/_.kolaru.__/"><Button variant="outline-warning"><i class="bi bi-instagram"></i></Button></a>{' '}&nbsp;
 
-          <MDBBtn outline color="warning" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='linkedin-in' />
-          </MDBBtn>
+          <a href="https://www.linkedin.com/in/vinayaga-moorthy-c-bb8284276/"><Button variant="outline-warning"><i class="bi bi-linkedin"></i></Button></a>{' '}&nbsp;
 
-          <MDBBtn outline color="warning" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='github' />
-          </MDBBtn>
+          <a href="www.google.com"><Button variant="outline-warning"><i class="bi bi-google"></i></Button></a>{' '}
         </section>
 
         <section className='review'>
@@ -57,9 +44,7 @@ export default function Footer() {
               </MDBCol>
 
               <MDBCol size="auto">
-                <MDBBtn outline color='warning' type='submit' className='mb-4'>
-                  Submit
-                </MDBBtn>
+                <Button variant="outline-warning">Submit</Button>{' '}
               </MDBCol>
             </MDBRow>
           </form>
@@ -82,9 +67,7 @@ export default function Footer() {
               </MDBCol>
 
               <MDBCol size="auto">
-                <MDBBtn outline color='warning' type='submit' className='mb-4'>
-                  Report
-                </MDBBtn>
+                <Button variant="outline-warning">Report</Button>{' '}
               </MDBCol>
             </MDBRow>
           </form>
@@ -98,24 +81,18 @@ export default function Footer() {
         </section>
 
         <section className='mb-4'>
-          <MDBBtn outline color="warning" floating className='m-1' href='/' role='button'>
-            Home
-          </MDBBtn>
+          <a href="/ProfilePage"><Button variant="outline-warning">Profile</Button></a>{' '}&nbsp;
 
-          <MDBBtn outline color="warning" floating className='m-1' href='/About' role='button'>
-            About
-          </MDBBtn>
+          <a href="/About"><Button variant="outline-warning">About</Button></a>{' '}&nbsp;
 
-          <MDBBtn outline color="warning" floating className='m-1' href='/AllProducts' role='button'>
-            Products
-          </MDBBtn>
+          <a href="/AllProducts"><Button variant="outline-warning">Products</Button></a>{' '}
         </section>
 
       </MDBContainer>
 
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2023 Copyright:
-        <a className='text-white' href='#'>
+        © 2024 Copyright:&nbsp;
+        <a className='text-white' href='/About'>
           PowerLend.com
         </a>
       </div>

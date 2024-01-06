@@ -59,4 +59,64 @@
         width:140,
         category: "Cleaner"
     },
+    {
+        id:6,
+        url:"https://www.dewalt.com/NAG/PRODUCT/IMAGES/HIRES/DWV015/DWV015_1.jpg?resize=530x530",
+        name:"Dust Extractor",
+        desc:"Integrated Storage Accessory Rack features durable latches that allows for a secure connection even while moving",
+        rate: 14.00,
+        avail: 3,
+        width:140,
+        category: "Cleaner"
+    },
+    {
+        id:6,
+        url:"https://www.dewalt.com/NAG/PRODUCT/IMAGES/HIRES/DWV015/DWV015_1.jpg?resize=530x530",
+        name:"Dust Extractor",
+        desc:"Integrated Storage Accessory Rack features durable latches that allows for a secure connection even while moving",
+        rate: 14.00,
+        avail: 3,
+        width:140,
+        category: "Cleaner"
+    },
+    {
+        id:6,
+        url:"https://www.dewalt.com/NAG/PRODUCT/IMAGES/HIRES/DWV015/DWV015_1.jpg?resize=530x530",
+        name:"Dust Extractor",
+        desc:"Integrated Storage Accessory Rack features durable latches that allows for a secure connection even while moving",
+        rate: 14.00,
+        avail: 3,
+        width:140,
+        category: "Cleaner"
+    },
+    {
+        id:6,
+        url:"https://www.dewalt.com/NAG/PRODUCT/IMAGES/HIRES/DWV015/DWV015_1.jpg?resize=530x530",
+        name:"Dust Extractor",
+        desc:"Integrated Storage Accessory Rack features durable latches that allows for a secure connection even while moving",
+        rate: 14.00,
+        avail: 3,
+        width:140,
+        category: "Cleaner"
+    },
+    {
+        id:4,
+        url:"https://www.dewalt.com/NAG/PRODUCT/IMAGES/HIRES/DCN45RND1/DCN45RND1_1.jpg?resize=530x530",
+        name:"Roofing Nailer kit",
+        desc:"Bump mode for efficiency and productivity and more featuristic modes",
+        rate: 27.00,
+        avail: 17,
+        width:140,
+        category: "Triller"
+    },
+    {
+        id:4,
+        url:"https://www.dewalt.com/NAG/PRODUCT/IMAGES/HIRES/DCN45RND1/DCN45RND1_1.jpg?resize=530x530",
+        name:"Roofing Nailer kit",
+        desc:"Bump mode for efficiency and productivity and more featuristic modes",
+        rate: 27.00,
+        avail: 17,
+        width:140,
+        category: "Triller"
+    },
 ];

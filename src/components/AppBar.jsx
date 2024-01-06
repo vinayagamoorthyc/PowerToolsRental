@@ -8,7 +8,7 @@ import { useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import CartDetails from '../otherPages/CartDetails';
 import 'typeface-montserrat';
-
+import { Link } from 'react-router-dom';
 
 function AppBar() {
   const [show, setShow] = useState(false);
@@ -20,7 +20,7 @@ function AppBar() {
     <div className='barBack'>
     <div fluid className='appbar' id='topview' >
       <Navbar fixed='top' expand="lg" className="bg-body-tertiary shadow-lg p-2 mb-1 bg-body navbar">
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="/About">
           <img src="https://i.postimg.cc/ZKR8bvHf/Power-Tools.png" alt="" width={100}/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -29,19 +29,19 @@ function AppBar() {
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '150px'}}
           >
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/About">About</Nav.Link>
-            <NavDropdown title="Products" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#top_pro">Top products</NavDropdown.Item>
+            <Nav.Link href="/" style={{fontWeight:"500"}}>Home</Nav.Link>
+            <Nav.Link href="/About" style={{fontWeight:"500"}}>About</Nav.Link>
+            <NavDropdown title="Products" id="navbarScrollingDropdown" style={{fontWeight:"500",zIndex:"1"}}>
+              <NavDropdown.Item href="#top_pro" style={{fontWeight:"500",zIndex:"1"}}>Top products</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/AllProducts">
+              <NavDropdown.Item href="/AllProducts" style={{fontWeight:"500",zIndex:"1"}}>
                 All Products</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link hidden={false} style={{fontWeight:"bold"}} href='/ProfilePage'>Profile</Nav.Link>
           </Nav>
       
           <Nav>
-          <button class="cart_button" onClick={handleShow}>
+          <button class="cart_button" onClick={handleShow} style={{zIndex:"0"}}>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bell" viewBox="0 0 16 16">
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
               </svg>
@@ -53,21 +53,21 @@ function AppBar() {
           &nbsp;
           &nbsp;
           <Nav>
-          <button class="ui-btn">
+          <Link to="/SignIn" style={{textDecoration:'none'}}><button class="ui-btn">
               <span><a style={{textDecoration:'none' ,color: '#ffc400'}} href="/SignIn">Sign In</a></span>
-            </button>
+            </button></Link>
           </Nav>
           &nbsp;
           <Nav>
-          <button class="ui-btn">
+          <Link to="/SignIn" style={{textDecoration:'none'}}><button class="ui-btn">
               <span><a style={{textDecoration:'none' ,color: '#ffc400'}} href="/SignIn">LogOut</a></span>
-            </button>
+            </button></Link>
           </Nav>
         </Navbar.Collapse>
     </Navbar>
   </div>
 
-  <Offcanvas show={show} onHide={handleClose} placement='end'>
+  <Offcanvas show={show} onHide={handleClose} placement='end' scroll='true'>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title style={{fontFamily:"Montserrat, sans-serif",fontWeight:"bold"}}>Your Cart</Offcanvas.Title>
         </Offcanvas.Header>

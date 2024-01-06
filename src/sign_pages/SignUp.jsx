@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './/SignUp.css';
 import { Link } from 'react-router-dom';
 import 'typeface-montserrat';
+import Aos from 'aos';
 
 export default function SignUp() {
+  useEffect(()=>{
+    Aos.init({duration: 1500});
+    }, []);
   return (
     <div>
       <div className='SignUp_page'>
@@ -21,7 +25,7 @@ export default function SignUp() {
       </button>
     </div>
     <div>
-    <div class="signUp_container">
+    <div class="signUp_container" data-aos="zoom-in">
     <div class="signUp_content">
     <img src="https://i.postimg.cc/ZKR8bvHf/Power-Tools.png" width={140} alt="" />
       <form class="signUp_content__form">

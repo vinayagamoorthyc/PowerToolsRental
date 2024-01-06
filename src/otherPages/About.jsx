@@ -1,16 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Footer from '../components/Footer'
 import './/About.css';
 import About_Nav from './About_Nav';
 import 'typeface-montserrat';
+import Aos from 'aos';
 
 export default function About() {
+  useEffect(()=>{
+    Aos.init({duration: 2000});
+    }, []);
   return (
     <div>
       <About_Nav/>
-      <div className='about'>
+      <div className='about' >
       &nbsp;
-      <div class="about_card">
+      <div class="about_card" data-aos="fade-up">
         <div className='about_inner_text'>
           <p>About Us</p>
         </div>
@@ -20,7 +24,7 @@ export default function About() {
         </div>
       </div>
       &nbsp;
-      <div class="about_card">
+      <div class="about_card" data-aos="fade-up">
         <div className='about_inner_text'>
           <p>Our Mission</p>
         </div>
@@ -30,7 +34,7 @@ export default function About() {
         </div>
       </div>
       &nbsp;
-      <div class="about_card">
+      <div class="about_card" data-aos="fade-up">
         <div className='about_inner_text'>
           <p>Quality You Can Trust</p>
         </div>
@@ -40,7 +44,7 @@ export default function About() {
         </div>
       </div>
       &nbsp;
-      <div class="about_card">
+      <div class="about_card" data-aos="fade-up">
         <div className='about_inner_text'>
           <p>Flexible Rental Options</p>
         </div>

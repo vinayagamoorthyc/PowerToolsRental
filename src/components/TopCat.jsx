@@ -11,10 +11,12 @@ export default function TopCat() {
       ));
     return (
         <div >
-            <h2 className='title' id='top_pro'>Top Products</h2>
+            <h2 className='title' id='top_pro'>Our Products</h2>
+            <center>
                 <div className='card_grid'>
                     {product}
                 </div>
+                </center>
         </div>
     )
 }

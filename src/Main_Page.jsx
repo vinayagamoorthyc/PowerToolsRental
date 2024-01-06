@@ -16,7 +16,6 @@ export default function MainPage() {
       <HorLine/>
       <Brands/>
       <TopCat/>
-      <HorLine/>
       <Features/>
       <HorLine/>
       <Reviews/>

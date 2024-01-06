@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import About_Nav from './About_Nav'
 import Footer from '../components/Footer';
 import "../components/Search.css"; 
@@ -11,12 +11,15 @@ import {
   MDBCard,
   MDBCardText,
   MDBCardBody,
-  MDBCardImage,
 } from 'mdb-react-ui-kit';
+import Aos from 'aos';
 import 'typeface-montserrat';
 
 
 export default function ProfilePage() {
+  useEffect(()=>{
+    Aos.init({duration: 2000});
+    }, []);
   
   return (
     <div>
@@ -32,7 +35,7 @@ export default function ProfilePage() {
           </MDBCol>
         </MDBRow>
         
-        <MDBRow style={{}}>
+        <MDBRow style={{}} data-aos="zoom-in">
           <MDBCol lg="4">
             <MDBCard className="mb-4" style={{width:"100%",height:"100%",padding:"55px"}}>
               <MDBCardBody className="text-center">

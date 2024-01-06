@@ -1,12 +1,17 @@
 import 'typeface-montserrat';
 import './/Brands.css';
+import Aos from 'aos';
+import { useEffect } from 'react';
 
 function Brands() {
+  useEffect(()=>{
+    Aos.init({duration: 2000});
+    }, []);
   return (
    <div>
     <h2 className='topic' style={{textAlign: "center",marginTop: "20px", fontFamily:"Montserrat, sans-serif"}}>Power Tool Brands</h2>
       <center>
-      <div className='brands'>
+      <div className='brands' data-aos="zoom-in">
         
           <div class="brand-details">
             <a href="https://www.boschtools.com/us/en/">
