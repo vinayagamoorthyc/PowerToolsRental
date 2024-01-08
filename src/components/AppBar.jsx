@@ -77,6 +77,12 @@ function AppBar() {
             <CartDetails/>&nbsp;
             <CartDetails/>&nbsp;
             <CartDetails/>&nbsp;
+            <CartDetails/>&nbsp;
+            <CartDetails/>&nbsp;
+            <CartDetails/>&nbsp;
+            <CartDetails/>&nbsp;
+            <CartDetails/>&nbsp;
+            <CartDetails/>&nbsp;
             </div> 
           </div>
         </Offcanvas.Body>

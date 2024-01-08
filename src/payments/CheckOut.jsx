@@ -6,7 +6,7 @@ import phonepe from "../asset/phonepe-1.svg";
 export default function CheckOut() {
   return (
     <center>
-        <div className='payment_view' style={{fontFamily:"Montserrat, sans-serif"}}>
+        <div className='payment_view' style={{fontFamily:"Montserrat, sans-serif",paddingTop:"20px"}}>
             <div>
                 <div class="form-container2" style={{backgroundColor:"#ffc400"}} tabindex="0">
                     <div class="form-container__block">
@@ -25,6 +25,7 @@ export default function CheckOut() {
             </div>
              <div>
             </div>
+            &nbsp;
             <div class="form-container2" style={{backgroundColor:"#ffc400"}} tabindex="0">
                     <div class="form-container__block">
                         <div class="form-container__header">

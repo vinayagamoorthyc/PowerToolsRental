@@ -60,10 +60,10 @@ export default function SignUp() {
         </div>
         <button>
           <span className='signUp_contact'>
-            <i class="bi bi-instagram"></i>&nbsp;&nbsp;&nbsp;
-            <i class="bi bi-github"></i>&nbsp;&nbsp;&nbsp;
-            <i class="bi bi-linkedin"></i>&nbsp;&nbsp;&nbsp;
-            <i class="bi bi-facebook"></i>
+            <a style={{color:"black"}} href="https://www.instagram.com/_.kolaru.__/"><i class="bi bi-instagram"></i></a>&nbsp;&nbsp;&nbsp;
+            <a style={{color:"black"}} href="https://github.com/vinayagamoorthyc?tab=repositories/"><i class="bi bi-github"></i></a>&nbsp;&nbsp;&nbsp;
+            <a style={{color:"black"}} href="https://www.linkedin.com/in/vinayaga-moorthy-c-bb8284276/"><i class="bi bi-linkedin"></i></a>&nbsp;&nbsp;&nbsp;
+            <a style={{color:"black"}} href="https://www.facebook.com/profile.php?id=100037768420533"><i class="bi bi-facebook"></i></a>
           </span>
         </button>
       </div>
