@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.d3e8ca44.css",
-    "main.js": "/static/js/main.e15fca69.js",
+    "main.css": "/static/css/main.bfebc49b.css",
+    "main.js": "/static/js/main.b18eabbf.js",
     "static/js/787.9c1c2f01.chunk.js": "/static/js/787.9c1c2f01.chunk.js",
+    "static/media/mainImage2.png": "/static/media/mainImage2.fb3dbafd3b39afda85ab.png",
     "static/media/tools2.png": "/static/media/tools2.c575fa13bb1fa11ceb3b.png",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.66b7720f4a230f1b0341.woff",
     "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.64ed46b247405068ca60.woff2",
@@ -43,13 +44,14 @@
     "static/media/montserrat-latin-100italic.woff2": "/static/media/montserrat-latin-100italic.e279051046ba1286706a.woff2",
     "static/media/product1.jpg": "/static/media/product1.f163c9d2306ac7c3027b.jpg",
     "static/media/montserrat-latin-100.woff2": "/static/media/montserrat-latin-100.8d7d79679b70dbe27172.woff2",
+    "static/media/phonepe-1.svg": "/static/media/phonepe-1.21de27d24b813cdd99b3b1edb084fbae.svg",
     "index.html": "/index.html",
-    "main.d3e8ca44.css.map": "/static/css/main.d3e8ca44.css.map",
-    "main.e15fca69.js.map": "/static/js/main.e15fca69.js.map",
+    "main.bfebc49b.css.map": "/static/css/main.bfebc49b.css.map",
+    "main.b18eabbf.js.map": "/static/js/main.b18eabbf.js.map",
     "787.9c1c2f01.chunk.js.map": "/static/js/787.9c1c2f01.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3e8ca44.css",
-    "static/js/main.e15fca69.js"
+    "static/css/main.bfebc49b.css",
+    "static/js/main.b18eabbf.js"
   ]
 }
