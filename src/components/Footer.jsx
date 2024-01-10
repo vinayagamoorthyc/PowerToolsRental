@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   MDBFooter,
   MDBContainer,
@@ -8,8 +8,30 @@ import {
 } from 'mdb-react-ui-kit';
 import Button from 'react-bootstrap/Button';
 import 'typeface-montserrat';
+import axios from 'axios';
 
 export default function Footer() {
+  const [name, setName] = useState();
+  const [experience, setExperience] = useState();
+  const [repname, setRepname] = useState();
+  const [report, setReport] = useState();
+
+  const SubmitExp=(e)=>{
+    axios.post("http://localhost:3002/createExperience", {name, experience})
+    .then(res=> {console.log(res)
+      alert("Thank you for submitted your experience!")
+      window.location.reload()
+    })
+    .catch(err=>console.log(err))
+  }
+  const SubmitReport=(e)=>{
+    axios.post("http://localhost:3002/createReport", {repname, report})
+    .then(()=>{
+      alert("Thank you for submitting your error Report to us!")
+      window.location.reload()
+    })
+  }
+
   return (
     <MDBFooter style={{fontFamily:"Montserrat, sans-serif"}} className='text-center' id='footer' color='warning' bgColor='black'>
       <MDBContainer className='p-4'>
@@ -28,7 +50,7 @@ export default function Footer() {
         </section>
 
         <section className='review'>
-          <form action='#'>
+          <form onSubmit={SubmitExp}>
             <MDBRow className='d-flex justify-content-center'>
               <MDBCol size="auto">
                 <p className='pt-2'>
@@ -37,21 +59,23 @@ export default function Footer() {
               </MDBCol>
 
               <MDBCol md='2' start>
-                <MDBInput contrast type='text' placeholder='Name' className='mb-4' />
+                <MDBInput contrast type='text' placeholder='Name' className='mb-4'
+                onChange={(e)=>setName(e.target.value)} required={true}/>
               </MDBCol>
               <MDBCol md='4' start>
-                <MDBInput contrast type='text' placeholder='Experienced Content' className='mb-4' />
+                <MDBInput contrast type='text' placeholder='Experienced Content' className='mb-4' required={true}
+                onChange={(e)=>setExperience(e.target.value)}/>
               </MDBCol>
 
               <MDBCol size="auto">
-                <Button variant="outline-warning">Submit</Button>{' '}
+                <input type='Submit' class="btn btn-outline-warning"/>{' '}
               </MDBCol>
             </MDBRow>
           </form>
         </section>
 
         <section className='report'>
-          <form action='#'>
+          <form onSubmit={SubmitReport}>
             <MDBRow className='d-flex justify-content-center'>
               <MDBCol size="auto">
                 <p className='pt-2'>
@@ -60,14 +84,16 @@ export default function Footer() {
               </MDBCol>
 
               <MDBCol md='2' start>
-                <MDBInput contrast type='text' placeholder='Name' className='mb-4' />
+                <MDBInput contrast type='text' placeholder='Name' className='mb-4' required={true}
+                onChange={(e)=>setRepname(e.target.value)}/>
               </MDBCol>
               <MDBCol md='4' start>
-                <MDBInput contrast type='text' placeholder='Experienced Error' className='mb-4' />
+                <MDBInput contrast type='text' placeholder='Experienced Error' className='mb-4' required={true}
+                onChange={(e)=>setReport(e.target.value)}/>
               </MDBCol>
 
               <MDBCol size="auto">
-                <Button variant="outline-warning">Report</Button>{' '}
+              <input type='Submit' class="btn btn-outline-warning" value="Report"/>{' '}
               </MDBCol>
             </MDBRow>
           </form>

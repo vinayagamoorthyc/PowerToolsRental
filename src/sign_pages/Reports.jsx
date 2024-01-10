@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
+import axios from 'axios';
 
 export default function Reports() {
+  const [userreport, setUserreport] = useState([]);
+  useEffect(()=>{
+    axios.get('http://localhost:3002/getUserreport')
+    .then(e =>setUserreport(e.data))
+    .catch(err=>console.log(err));
+  }, []);
+  const handleDelete=(id)=>{
+    axios.delete('http://localhost:3002/deleteReport/'+id)
+    .then(e=>window.location.reload())
+    .catch(err=>console.log(err))
+  }
+
   return (
     <div>
       <div style={{padding:"5px"}}>
@@ -21,17 +34,19 @@ export default function Reports() {
                 <tr>
                   <th>User Name</th>
                   <th>Error Reported</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                  <tr>
-                    <td>Sanjay</td>
-                    <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</td>
-                  </tr>
-                  <tr>
-                    <td>Randip Leon</td>
-                    <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</td>
-                  </tr>
+                {
+                  userreport.map(e=>{
+                   return <tr>
+                            <td>{e.repname}</td>
+                            <td>{e.report}</td>
+                            <td><button onClick={()=>handleDelete(e._id)} class="btn btn-danger">Remove</button></td>
+                          </tr>
+                  })
+                }
               </tbody>
             </Table>
             </center>

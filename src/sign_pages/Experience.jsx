@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import ExpTable from './ExpTable';
-import {expdata} from "./expdata.js";
+import axios from "axios";
 
 export default function Experience() {
-    const edata=expdata.map(e=>(
-        <ExpTable name={e.name} experience={e.experience}/>
+
+    const [userexp, setUserexp] = useState([]);
+    useEffect(()=>{
+        axios.get('http://localhost:3002/getUserexp')
+        .then(e =>setUserexp(e.data))
+        .catch(err=>console.log(err));
+    }, []);
+
+    const edata=userexp.map(e=>(
+        <ExpTable name={e.name} experience={e.experience} _id={e._id}/>
       ));
   return (
     <div>
@@ -26,6 +34,7 @@ export default function Experience() {
                 <tr>
                 <th>Name of the User</th>
                 <th>Description of User's Experience</th>
+                <th>Option</th>
                 </tr>
             </thead>
                 {edata}

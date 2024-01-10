@@ -17,7 +17,7 @@ function AppBar() {
   const handleShow = () => setShow(true);
 
   return (
-    <div className='barBack'>
+    <div className=''>
     <div fluid className='appbar' id='topview' >
       <Navbar fixed='top' expand="lg" className="bg-body-tertiary shadow-lg p-2 mb-1 bg-body navbar">
         <Navbar.Brand href="/About">
