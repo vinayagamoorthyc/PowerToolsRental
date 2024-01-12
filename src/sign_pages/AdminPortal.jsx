@@ -7,10 +7,17 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 export default function AdminPortal() {
     const [image, setImage] = useState(upimg);
     const [products,setProducts]=useState([]);
+    const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
     
     useEffect(()=>{
       axios.get('http://localhost:3002/getProduct')
@@ -130,12 +137,27 @@ export default function AdminPortal() {
                  return (<tr>
                 <td>{e.proname}</td>
                 <td>{e.desc}</td>
-                <td>{e.prorate}</td>
+                <td>{e.prorate}</td> {/* onClick={()=>handleDelete(e._id)} */}
                 <td>{e.avail}</td>
                 <td>{e.category}</td>
                 <td>
-                  <Link to={`/ProUpdate/${e._id}`}><button class="btn btn-warning">Update</button></Link>
-                  <button class="btn btn-danger" onClick={()=>handleDelete(e._id)}>Delete</button>
+                  <Link to={`/ProUpdate/${e._id}`}><button class="btn btn-warning">Update</button></Link>&nbsp;
+                  <button class="btn btn-danger" onClick={handleShow}>Remove</button>
+
+                  <Modal show={show} onHide={handleClose}>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Remove Product</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Are you sure to permanently delete this product from your inventory?</Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="outline-secondary" onClick={handleClose}>
+                        Cancel
+                      </Button>
+                      <Button variant="danger" onClick={()=>handleDelete(e._id)}>
+                        Remove
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
                 </td>
               </tr>
               )
