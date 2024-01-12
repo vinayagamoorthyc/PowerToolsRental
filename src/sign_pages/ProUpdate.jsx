@@ -35,7 +35,7 @@ export default function ProUpdate() {
       }).catch(err=>console.log(err))
     }
     return (
-      <center>
+      <center style={{marginTop:"70px"}}>
         <div className='admin_view'>
           <div class="form-container2" style={{backgroundColor:"#ffc400",marginTop:"-5px",width:"550px"}} tabindex="0">
               <div class="form-container__block">
