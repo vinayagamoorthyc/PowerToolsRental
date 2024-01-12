@@ -13,6 +13,7 @@ import Track from './sign_pages/Track';
 import Reports from './sign_pages/Reports';
 import Experience from './sign_pages/Experience';
 import CheckOut from './payments/CheckOut';
+import ProUpdate from './sign_pages/ProUpdate';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path='/Reports' element={<Reports/>}/>
         <Route path='/Experience' element={<Experience/>}/>
         <Route path='/CheckOut' element={<CheckOut/>}/>
+        <Route path='/ProUpdate/:id' element={<ProUpdate/>}/>
       </Routes>
     </div>
   );
