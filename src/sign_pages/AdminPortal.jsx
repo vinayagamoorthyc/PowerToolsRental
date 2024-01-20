@@ -99,6 +99,8 @@ export default function AdminPortal() {
                     </div>
                     <div class="form-container__register-buttons">
                     <input type='submit' class="form-container__sign" value="Add to Inventory"/>
+                    <input type='reset' class="form-container__sign" value="Clear
+                    "/>
                     </div>
                 </form>
                 </div>
@@ -123,6 +125,7 @@ export default function AdminPortal() {
             <Table striped bordered hover variant="light" style={{width:"90%",fontFamily:'Montserrat, sans-serif'}}>
             <thead>
                 <tr>
+                <th>Product</th>
                 <th>Product Name</th>
                 <th>Product Description</th>
                 <th>Product Rate</th>
@@ -135,9 +138,10 @@ export default function AdminPortal() {
               {
                 products.map((e)=>{
                  return (<tr>
+                <td><img src={e.imgurl} alt="" width={100} /></td>
                 <td>{e.proname}</td>
                 <td>{e.desc}</td>
-                <td>{e.prorate}</td> {/* onClick={()=>handleDelete(e._id)} */}
+                <td>{e.prorate}</td>
                 <td>{e.avail}</td>
                 <td>{e.category}</td>
                 <td>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './/ProductPage.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Tab from 'react-bootstrap/Tab';
@@ -7,9 +7,32 @@ import pro_image from "../asset/product1.jpg"
 import Footer from '../components/Footer';
 import 'typeface-montserrat';
 import Aos from 'aos';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 export default function ProductPage() {
+  const {id} = useParams();
+  const [proname,setProname]=useState();
+    const [prorate,setProrate]=useState();
+    const [desc,setDesc]=useState();
+    const [overview,setOverview]=useState();
+    const [avail,setAvail]=useState();
+    const [category,setCategory]=useState();
+    const [imgurl,setImgurl]=useState();
+
+  console.log(id)
   useEffect(()=>{
+    axios.get("http://localhost:3002/getUp/"+id)
+      .then(e=>{ console.log(e)
+        setProname(e.data.proname)
+        setProrate(e.data.prorate)  
+        setDesc(e.data.desc)    
+        setOverview(e.data.overview)
+        setAvail(e.data.avail)
+        setCategory(e.data.category)
+        setImgurl(e.data.imgurl)
+      })
+      .catch(err=>console.log(err))
     Aos.init({duration: 1500});
     }, []);
   return (
@@ -24,12 +47,13 @@ export default function ProductPage() {
         </div>
         <div className='pro_view'>
           <div  data-aos="zoom-in">
-            <img className='pro_img' src={pro_image} width={360} alt="" />
+            <img className='pro_img' src={imgurl} width={320} alt="" />
           </div>
           <div className='pro_details_view'>
             <div>
-              <h4>Double-Bevel Sliding Compound Miter Saw</h4>
+              <h4>{proname}</h4>
             </div>
+            <form action="">
             <div>
               <div class="rating">
                 <input value="5" name="rating" id="star5" type="radio"/>
@@ -45,11 +69,11 @@ export default function ProductPage() {
               </div>
             </div>
             <div style={{display:"flex", flexDirection:"row"}}>
-              <h4 style={{color:"#ffc506"}}>$41.00</h4>
+              <h4 style={{color:"#ffc506"}}>${prorate}.00</h4>
             </div>
             <div>
               <div>
-              Stainless steel miter detent plate with 10 positive stops. Precise miter system and machined base fence support Precise miter system and machined base fence support Cam-lock miter handle with detent override delivers quick and accurate miter angles.
+                {desc}
               </div>
             </div>
             &nbsp;
@@ -60,7 +84,7 @@ export default function ProductPage() {
             &nbsp;
             <div>
               <p>
-                <button class="cssbuttons-io-button">
+                <button type='submit' class="cssbuttons-io-button">
                   Get now
                   <div class="icon">
                     <i class="bi bi-cart"></i>
@@ -68,8 +92,9 @@ export default function ProductPage() {
                 </button>
               </p>
             </div>
+            </form>
             <div style={{fontWeight:"bold"}}>
-              Availability: 10 products in stock.
+              Availability: {avail} products in stock.
             </div>
           </div>
         </div>
@@ -82,7 +107,7 @@ export default function ProductPage() {
             style={{fontSize:"20px",fontWeight:"bold"}}
           >
             <Tab eventKey="home" title="Overview">
-            The DEWALT DWS779 sliding compound miter saw is precision at it's toughest, delivering accuracy and capacity for everyday jobsite use.. This miter saw is designed with a powerful 15 Amp, 3800 RPM motor that delivers extended power and durability. Tall sliding fences support 7-1/2 in. of crown nested and up to 2x14 dimensional lumbers at 90° and 2x10 at 45°. A cam lock miter handle with detent override delivers quick and accurate miter angles.
+              {overview}
             </Tab>
           </Tabs>
         </div>&nbsp;

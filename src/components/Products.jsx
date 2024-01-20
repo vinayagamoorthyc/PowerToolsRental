@@ -4,13 +4,11 @@ import 'typeface-montserrat';
 import Aos from 'aos';
 
 export default function Products(props) {
-  useEffect(()=>{
-    Aos.init({duration: 1800});
-    }, []);
+
   return (
         <>
         
-    <div class="card" data-aos="zoom-in">
+    <div class="card">
       <div class="">
         <img src={props.url} alt="" width={props.width}/>
       </div>

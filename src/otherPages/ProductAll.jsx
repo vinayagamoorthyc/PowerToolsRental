@@ -6,19 +6,18 @@ import Aos from 'aos';
 
 export default function ProductAll(props) {
     useEffect(()=>{
-        Aos.init({duration: 2000});
+        Aos.init({duration: 800});
         }, []);
   return (
     <div className='all_cart_view' data-aos="zoom-in">
         <div>
-            <img src={props.url} width={130} alt="" />
+            <img src={props.url} width={150} alt="" />
         </div>
         <div className='all_cart_details'>
-            <div style={{fontWeight:"bolder"}}>{props.name}</div>
-            <div style={{textAlign:'center'}}>{props.desc}</div>
-            <div style={{fontWeight:"bolder"}}>${props.rate}.00</div>
-            <div style={{fontWeight:"bold"}}>Available: {props.avail} left</div>
-            <div><Link to="/ProductPage"><button class="but">
+            <div style={{fontWeight:"500",textAlign:"center"}}>{props.name}</div>
+            <div style={{fontWeight:"bolder"}}>INR: <u>{props.rate}.00</u> /day</div>
+            <div style={{fontWeight:"bolder"}}>Available: {props.avail} left</div>
+            <div><Link to={`/ProductPage/${props._id}`}><button class="but">
                     <span class="but_lg">
                     <span class="but_sl"></span>
                     <span class="but_text">View Tool</span>
