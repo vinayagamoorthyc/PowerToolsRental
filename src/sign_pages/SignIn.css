@@ -39,6 +39,10 @@
     background: rgb(255, 255, 255);
 }
 
+.signIn_word{
+  text-shadow: 2px 2px 4px #000000ac;
+}
+
 .content img {
     margin-bottom: 41px;
   }
