@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function Reports() {
   const [userreport, setUserreport] = useState([]);

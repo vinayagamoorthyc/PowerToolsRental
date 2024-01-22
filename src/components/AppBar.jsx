@@ -34,8 +34,8 @@ function AppBar() {
             <NavDropdown title="Products" id="navbarScrollingDropdown" style={{fontWeight:"500",zIndex:"1",color:"black"}}>
               <NavDropdown.Item href="#top_pro" style={{fontWeight:"500",zIndex:"1"}}>Our Products</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/AllProducts" style={{fontWeight:"500",zIndex:"1"}}>
-              All Products</NavDropdown.Item>
+              <NavDropdown.Item style={{fontWeight:"500",zIndex:"1"}}>
+              <Link to="/AllProducts" style={{textDecoration:"none",color:"black"}}>All Products</Link></NavDropdown.Item>
             </NavDropdown>
             <Nav.Link hidden={false} style={{fontWeight:"600"}}><Link to="/ProfilePage" style={{textDecoration:"none",color:"black"}}>Profile</Link></Nav.Link>
           </Nav>
