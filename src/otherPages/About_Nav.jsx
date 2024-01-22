@@ -24,7 +24,7 @@ export default function About_Nav() {
             <Nav.Link href="#footer" style={{fontWeight:"500",color:"black"}}>Contact</Nav.Link>
             <NavDropdown title="Products" id="navbarScrollingDropdown" style={{fontWeight:"500",zIndex:"1"}}>
               <NavDropdown.Item href="/AllProducts" style={{fontWeight:"500"}}>
-                All Products</NavDropdown.Item>
+              <Link to="/AllProducts" style={{textDecoration:"none",color:"black"}}>All Products</Link></NavDropdown.Item>
             </NavDropdown>
             <Nav.Link hidden={false} style={{fontWeight:"600"}}><Link style={{textDecoration:"none",color:"#000"}} to="/ProfilePage">Profile</Link></Nav.Link>
           </Nav>

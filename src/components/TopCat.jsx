@@ -15,7 +15,7 @@ export default function TopCat() {
         }, []);
 
     const product=allProducts.map(e=>(
-        <Products url={e.imgurl} name={e.proname} id={e._id} rate={e.prorate}/>
+        <Products url={e.url} name={e.name} id={e._id} rate={e.rate}/>
     ));
     return (
         <div>

@@ -14,6 +14,7 @@ import {
 } from 'mdb-react-ui-kit';
 import Aos from 'aos';
 import 'typeface-montserrat';
+import { Link } from 'react-router-dom';
 
 
 export default function ProfilePage() {
@@ -42,7 +43,7 @@ export default function ProfilePage() {
               <div className="image-preview" style={{ backgroundImage: `url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp)` }} />
                 <p style={{fontWeight:"bolder",marginTop:"10px",fontFamily:"Montserrat, sans-serif"}} className="text-muted mb-1">Vinayaga Moorthy c</p>
                 <div style={{marginTop:"10px"}} className="d-flex justify-content-center mb-2">
-                  <a href="/EditProfile" style={{textDecoration:"none"}}><button class="edit">Edit Profile</button></a>
+                  <Link to="/EditProfile" style={{textDecoration:"none"}}><button class="edit">Edit Profile</button></Link>
                 </div>
               </MDBCardBody>
             </MDBCard>
