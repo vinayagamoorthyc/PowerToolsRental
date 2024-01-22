@@ -80,6 +80,7 @@ overflow: none;
   gap: 15px;
   overflow: scroll;
   padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.163);
 } 
 
 
@@ -89,6 +90,7 @@ overflow: none;
   font-weight: 600;
   color: black;
   text-align: center;
+  max-width: 90%;
 }
 
 .text .p {

@@ -49,9 +49,9 @@ export default function AdminPortal() {
 
   return (
     <div>
-        <div>
+        <div className='adminnav'>
 
-        <div style={{padding:"5px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between"}}>
+        <div style={{padding:"5px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",zIndex:"1"}}>
         <a href="/SignIn"><button class="Back_Btn">
           <a href='/SignIn' class="back_icon"><svg style={{color:"black"}} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left svg-icon" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
@@ -59,10 +59,10 @@ export default function AdminPortal() {
                     </svg></a>
           <a href='/SignIn' class="back_text">Quit</a>
         </button></a>
-        
+        <h3 style={{textAlign:"center",fontFamily:'Montserrat, sans-serif',fontWeight:"bolder",marginTop:"0px",zIndex:"1"}}>Admin Portal</h3>
         <NavDropdown title="Others" id="navbarScrollingDropdown" 
         style={{
-            fontFamily:"Montserrat, sans-serif",fontWeight:"800",border:"0.7px solid #969699",padding:"2px",borderRadius:"10px"
+            fontFamily:"Montserrat, sans-serif",fontWeight:"800"
             }}>
               <NavDropdown.Item href="/Track">Orders Track</NavDropdown.Item>
               <NavDropdown.Divider />
@@ -75,13 +75,12 @@ export default function AdminPortal() {
 
         </div>
         </div>
-        <h3 style={{textAlign:"center",fontFamily:'Montserrat, sans-serif',fontWeight:"bolder",marginTop:"-42px"}}>Admin Portal</h3>
         <hr style={{marginTop:"-2px"}} />
         <div className='admin_view'>
         <div class="form-container2" style={{backgroundColor:"#ffc400",marginTop:"-5px"}} tabindex="0">
             <div class="form-container__block">
                 <div class="form-container__header">
-                <p style={{fontWeight:"700"}}>Create or Update your products</p>    
+                <p style={{fontWeight:"800"}}>Add your products into Power Tools Inventory</p>    
                 <form class="form-container__form" onSubmit={InsertProduct}>
                     <input placeholder="Product Name" type="text" required={true} onChange={(e)=>setProname(e.target.value)}/>
                     <input placeholder="Product rate" type="number" required={true} onChange={(e)=>setProrate(e.target.value)}/>
@@ -117,12 +116,11 @@ export default function AdminPortal() {
             </div>
         </div>
         </div>
-        <hr />
-        <h3 style={{textAlign:"center",fontFamily:'Montserrat, sans-serif',fontWeight:"bolder"}}>Products Catalog</h3>
-        <hr />
+        <br />
+        <h3 style={{textAlign:"center",fontFamily:'Montserrat, sans-serif',fontWeight:"bold",backgroundColor:"black",padding:"10px",color:"#ffc400",fontSize:"20px"}}>Products Catalog</h3>
         <div>
         <center>
-            <Table striped bordered hover variant="light" style={{width:"90%",fontFamily:'Montserrat, sans-serif'}}>
+            <Table striped bordered hover variant="light" style={{width:"98%",fontFamily:'Montserrat, sans-serif'}}>
             <thead>
                 <tr>
                 <th>Product</th>
@@ -146,9 +144,9 @@ export default function AdminPortal() {
                 <td>{e.category}</td>
                 <td>
                   <Link to={`/ProUpdate/${e._id}`}><button class="btn btn-warning">Update</button></Link>&nbsp;
-                  <button class="btn btn-danger" onClick={handleShow}>Remove</button>
+                  <button class="btn btn-outline-danger" onClick={handleShow}>Remove</button>
 
-                  <Modal show={show} onHide={handleClose}>
+                  <Modal show={show} onHide={handleClose} backdrop="static">
                     <Modal.Header closeButton>
                       <Modal.Title>Remove Product</Modal.Title>
                     </Modal.Header>

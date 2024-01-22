@@ -26,7 +26,7 @@ export default function Features() {
             </div>
             <div data-aos="fade-up">
                 <h5><i class="bi bi-truck"></i> &nbsp;Free Delivery</h5>
-                <p>For all goods over $5</p>
+                <p>For all goods over ₹499</p>
             </div>
         </div>
       </div>

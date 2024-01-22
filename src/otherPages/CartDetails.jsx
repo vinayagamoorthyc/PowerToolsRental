@@ -10,7 +10,7 @@ export default function CartDetails() {
       </div>
       <div className='cartdetails'>
         <div>: Circular Saw</div>
-        <div>: $21.00</div>
+        <div>: ₹ 21.00</div>
         <div>: 7 days</div>
       </div>
       <div>

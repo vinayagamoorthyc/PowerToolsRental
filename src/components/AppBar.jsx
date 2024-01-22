@@ -20,8 +20,8 @@ function AppBar() {
     <div className=''>
     <div fluid className='appbar' id='topview' >
       <Navbar fixed='top' expand="lg" className="bg-body-tertiary shadow-lg p-2 mb-1 bg-body navbar">
-        <Navbar.Brand href="/About">
-          <img src="https://i.postimg.cc/ZKR8bvHf/Power-Tools.png" alt="" width={100}/>
+        <Navbar.Brand><Link to="/About">
+          <img src="https://i.postimg.cc/ZKR8bvHf/Power-Tools.png" alt="" width={100}/></Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -29,15 +29,15 @@ function AppBar() {
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '150px'}}
           >
-            <Nav.Link href="/" style={{fontWeight:"500"}}>Home</Nav.Link>
-            <Nav.Link href="/About" style={{fontWeight:"500"}}>About</Nav.Link>
-            <NavDropdown title="Products" id="navbarScrollingDropdown" style={{fontWeight:"500",zIndex:"1"}}>
-              <NavDropdown.Item href="#top_pro" style={{fontWeight:"500",zIndex:"1"}}>Top products</NavDropdown.Item>
+            <Nav.Link style={{fontWeight:"500"}}><Link to="/" style={{textDecoration:"none",color:"black"}}>Home</Link></Nav.Link>
+            <Nav.Link style={{fontWeight:"500"}}><Link to="/About" style={{textDecoration:"none",color:"black"}}>About</Link></Nav.Link>
+            <NavDropdown title="Products" id="navbarScrollingDropdown" style={{fontWeight:"500",zIndex:"1",color:"black"}}>
+              <NavDropdown.Item href="#top_pro" style={{fontWeight:"500",zIndex:"1"}}>Our Products</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/AllProducts" style={{fontWeight:"500",zIndex:"1"}}>
-                All Products</NavDropdown.Item>
+              All Products</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link hidden={false} style={{fontWeight:"bold"}} href='/ProfilePage'>Profile</Nav.Link>
+            <Nav.Link hidden={false} style={{fontWeight:"600"}}><Link to="/ProfilePage" style={{textDecoration:"none",color:"black"}}>Profile</Link></Nav.Link>
           </Nav>
       
           <Nav>
@@ -67,7 +67,7 @@ function AppBar() {
     </Navbar>
   </div>
 
-  <Offcanvas show={show} onHide={handleClose} placement='end' scroll='true'>
+  <Offcanvas show={show} onHide={handleClose} placement='end' scroll='true' className="offcanvas">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title style={{fontFamily:"Montserrat, sans-serif",fontWeight:"bold"}}>Your Cart</Offcanvas.Title>
         </Offcanvas.Header>
@@ -87,7 +87,7 @@ function AppBar() {
           </div>
         </Offcanvas.Body>
         <div><center>
-          <p style={{fontFamily:'Montserrat, sans-serif',fontWeight:"500"}}>Sub Total: $63.00</p>
+          <p style={{fontFamily:'Montserrat, sans-serif',fontWeight:"800",color:"black"}}>Sub Total: ₹ 63.00</p>
           <a href="/CheckOut">
               <button class="checkout_btn">
                 <b>Check Out</b>

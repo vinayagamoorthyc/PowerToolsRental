@@ -4,12 +4,15 @@
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
-    padding: 25px;
+    padding: 20px;
     gap: 15px;
-    padding-top: 90px;
+    padding-top: 70px;
 }
 .blacknav{
     position: fixed;
     width: 100%;
     z-index: 1;
+    background-color: #6c6c6c6e !important;
+  backdrop-filter: blur(8px);
+  height: 50px;
 }

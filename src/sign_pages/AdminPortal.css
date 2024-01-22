@@ -5,6 +5,15 @@
     flex-wrap: wrap;
     align-items: center;
     font-family: Montserrat, sans-serif;
+    margin-top: 72px;
+}
+
+.adminnav{
+  background-color: #6e6e6e6e !important;
+  backdrop-filter: blur(8px);
+  position: fixed;
+  width: 100%;
+  margin-top: 2px;
 }
 
 .form-container__sign-app-buttons svg {

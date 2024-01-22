@@ -45,7 +45,7 @@ function Brands() {
 
           <div class="brand-details">
             <a href="https://www.husky.com/">
-            <img src="https://cdn-ilpnb.nitrocdn.com/STpfSygwxcPewXJqmgrPeJPHwMROTFOt/assets/images/optimized/rev-353d8c8/wp-content/uploads/2020/12/HUSKY-header-logo.svg" alt="" width={150}/>
+            <img src="https://www.husky.com/wp-content/uploads/2020/12/HUSKY-header-logo.svg" alt="" width={150}/>
             </a>
           </div>
       </div>

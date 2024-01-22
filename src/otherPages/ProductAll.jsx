@@ -15,7 +15,7 @@ export default function ProductAll(props) {
         </div>
         <div className='all_cart_details'>
             <div style={{fontWeight:"500",textAlign:"center"}}>{props.name}</div>
-            <div style={{fontWeight:"bolder"}}>INR: <u>{props.rate}.00</u> /day</div>
+            <div style={{fontWeight:"bolder"}}>₹ <u>{props.rate}.00</u> /day</div>
             <div style={{fontWeight:"bolder"}}>Available: {props.avail} left</div>
             <div><Link to={`/ProductPage/${props._id}`}><button class="but">
                     <span class="but_lg">

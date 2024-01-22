@@ -40,7 +40,7 @@ export default function AllProducts() {
   return (
     <div>
       <div style={{
-        background:"black", padding:"0px", display:"flex",flexDirection:"row",justifyContent:"space-between",alignItems:"center"
+        background:"black", display:"flex",flexDirection:"row",justifyContent:"space-between",alignItems:"center"
         }} className='blacknav'>
         <Link to='/'><button class="Back_Btn">
           <Link to='/' class="back_icon"><svg class="svg-icon" viewBox="0 0 20 20">
@@ -54,16 +54,19 @@ export default function AllProducts() {
         }}>
             <NavDropdown
             title={`Filter by ${filter}`} 
-            onSelect={handleFilterChange} style={{color:"#ffc400",fontFamily:"  Montserrat, sans-serif"}}>
+            onSelect={handleFilterChange} style={{color:"#000",fontFamily:"  Montserrat, sans-serif"}}>
               <NavDropdown.Item eventKey="all">All</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Cutter">Cutter</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Triller">Triller</NavDropdown.Item>
-              <NavDropdown.Item eventKey="Cleaner">Cleaner</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Home Improvement">Home Improvement</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Building Supplies">Building Supplies</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Power Saws">Power Saws</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Welding">Welding</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Generator">Generator</NavDropdown.Item>
+              <NavDropdown.Item eventKey="Compressor">Compressor</NavDropdown.Item>
             </NavDropdown>
             <div className="search">
                 <Form className="d-flex">
                 <input type="text" name="text" class="input" placeholder="Search here..." onChange={handleSearchChange}></input>
-                <Button variant="outline-warning" style={{borderRadius: '80px'}}><i class="bi bi-search"></i></Button>
+                <Button variant="warning" style={{borderRadius: '80px'}}><i class="bi bi-search"></i></Button>
               </Form>
             </div>
           </div>
