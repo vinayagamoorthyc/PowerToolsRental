@@ -64,13 +64,13 @@ export default function AdminPortal() {
         style={{
             fontFamily:"Montserrat, sans-serif",fontWeight:"800"
             }}>
-              <NavDropdown.Item href="/Track">Orders Track</NavDropdown.Item>
+              <NavDropdown.Item href="/Track"><Link to="/Experience" style={{textDecorationLine:"none",color:"black"}}>Orders Track</Link></NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/Reports">
-                User Reports</NavDropdown.Item>
+              <Link to="/Experience" style={{textDecorationLine:"none",color:"black"}}>User Reports</Link></NavDropdown.Item>
                 <NavDropdown.Divider />
-              <NavDropdown.Item href="/Experience">
-                User Experience</NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to="/Experience" style={{textDecorationLine:"none",color:"black"}}>User Experience</Link></NavDropdown.Item>
         </NavDropdown>
 
         </div>
