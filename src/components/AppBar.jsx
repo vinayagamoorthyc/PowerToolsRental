@@ -88,10 +88,10 @@ function AppBar() {
         </Offcanvas.Body>
         <div><center>
           <p style={{fontFamily:'Montserrat, sans-serif',fontWeight:"800",color:"black"}}>Sub Total: ₹ 63.00</p>
-          <a href="/CheckOut">
+          <Link to="/CheckOut">
               <button class="checkout_btn">
                 <b>Check Out</b>
-              </button></a>
+              </button></Link>
               </center>
             </div>
       </Offcanvas>

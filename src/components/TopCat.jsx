@@ -14,7 +14,7 @@ export default function TopCat() {
         .catch(err=>console.log(err));
         }, []);
 
-    const product=products.map(e=>(
+    const product=allProducts.map(e=>(
         <Products url={e.imgurl} name={e.proname} id={e._id} rate={e.prorate}/>
     ));
     return (

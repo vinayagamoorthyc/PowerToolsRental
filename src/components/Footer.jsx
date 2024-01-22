@@ -9,6 +9,7 @@ import {
 import Button from 'react-bootstrap/Button';
 import 'typeface-montserrat';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const [name, setName] = useState();
@@ -107,11 +108,11 @@ export default function Footer() {
         </section>
 
         <section className='mb-4'>
-          <a href="/ProfilePage"><Button variant="outline-warning">Profile</Button></a>{' '}&nbsp;
+          <Link to="/ProfilePage"><Button variant="outline-warning">Profile</Button></Link>{' '}&nbsp;
 
-          <a href="/About"><Button variant="outline-warning">About</Button></a>{' '}&nbsp;
+          <Link to="/About"><Button variant="outline-warning">About</Button></Link>{' '}&nbsp;
 
-          <a href="/AllProducts"><Button variant="outline-warning">Products</Button></a>{' '}
+          <Link to="/AllProducts"><Button variant="outline-warning">Products</Button></Link>{' '}
         </section>
 
       </MDBContainer>
