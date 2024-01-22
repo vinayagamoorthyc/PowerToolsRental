@@ -16,6 +16,7 @@
 .news {
   font-family: Montserrat, sans-serif;
   animation : slide 10s linear infinite;
+  font-weight: 500;
 }
 
 @keyframes slide {
