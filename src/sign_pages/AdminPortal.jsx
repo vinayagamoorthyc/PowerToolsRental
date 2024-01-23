@@ -67,7 +67,7 @@ export default function AdminPortal() {
               <NavDropdown.Item href="/Track"><Link to="/Experience" style={{textDecorationLine:"none",color:"black"}}>Orders Track</Link></NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/Reports">
-              <Link to="/Experience" style={{textDecorationLine:"none",color:"black"}}>User Reports</Link></NavDropdown.Item>
+              <Link to="/Reports" style={{textDecorationLine:"none",color:"black"}}>User Reports</Link></NavDropdown.Item>
                 <NavDropdown.Divider />
               <NavDropdown.Item>
                 <Link to="/Experience" style={{textDecorationLine:"none",color:"black"}}>User Experience</Link></NavDropdown.Item>
