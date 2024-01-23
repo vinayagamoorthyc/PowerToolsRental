@@ -47,7 +47,7 @@ export default function SignUp() {
             <span>Password</span>
           </label>
         </div>
-        <Link to="/AdminPortal"><button>Register</button></Link>
+        <Link to="/SignIn"><button>Register</button></Link>
       </form>
       <div class="signUp_content__forgot-buttons">
         <button>

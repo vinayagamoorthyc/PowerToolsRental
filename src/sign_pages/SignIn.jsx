@@ -40,6 +40,7 @@ export default function SignIn() {
           </label>
         </div>
         <Link className='login_btn' to='/'><button>Log In</button></Link>
+        <Link to="/AdminPortal" style={{color: 'black',fontSize:"13px",fontWeight:"600"}}>Temporary AdminPortal</Link>
       </form>
       <div class="content__or-text">
         <span></span>
