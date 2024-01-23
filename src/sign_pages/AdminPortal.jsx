@@ -15,9 +15,8 @@ export default function AdminPortal() {
     const [products,setProducts]=useState([]);
     const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     
     useEffect(()=>{
       axios.get('http://localhost:3002/getProduct')
@@ -64,9 +63,9 @@ export default function AdminPortal() {
         style={{
             fontFamily:"Montserrat, sans-serif",fontWeight:"800"
             }}>
-              <NavDropdown.Item href="/Track"><Link to="/Experience" style={{textDecorationLine:"none",color:"black"}}>Orders Track</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/Experience" style={{textDecorationLine:"none",color:"black"}}>Orders Track</Link></NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/Reports">
+              <NavDropdown.Item>
               <Link to="/Reports" style={{textDecorationLine:"none",color:"black"}}>User Reports</Link></NavDropdown.Item>
                 <NavDropdown.Divider />
               <NavDropdown.Item>
