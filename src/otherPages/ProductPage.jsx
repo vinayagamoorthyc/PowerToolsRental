@@ -93,7 +93,10 @@ export default function ProductPage() {
             </div>
             </form>
             <div style={{fontWeight:"bold"}}>
-              Availability: {avail} products in stock.
+              Availability: &nbsp;{avail} products in stock
+            </div>
+            <div style={{fontWeight:"bold"}}>
+              Category:&nbsp;&nbsp;{category}
             </div>
           </div>
         </div>
