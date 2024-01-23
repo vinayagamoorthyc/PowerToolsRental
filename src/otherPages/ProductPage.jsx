@@ -3,7 +3,6 @@ import './/ProductPage.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import pro_image from "../asset/product1.jpg"
 import Footer from '../components/Footer';
 import 'typeface-montserrat';
 import Aos from 'aos';
