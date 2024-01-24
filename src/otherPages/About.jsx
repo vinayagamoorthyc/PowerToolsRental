@@ -7,7 +7,7 @@ import Aos from 'aos';
 
 export default function About() {
   useEffect(()=>{
-    Aos.init({duration: 2000});
+    Aos.init({duration: 1000});
     }, []);
   return (
     <div>
@@ -16,7 +16,7 @@ export default function About() {
       &nbsp;
       <div class="about_card" data-aos="fade-up">
         <div className='about_inner_text'>
-          <p>About Us</p>
+          <p>About us</p>
         </div>
         <div class="about_textBox">
           <p class="about_text about_head">About Us</p>
@@ -26,7 +26,7 @@ export default function About() {
       &nbsp;
       <div class="about_card" data-aos="fade-up">
         <div className='about_inner_text'>
-          <p>Our Mission</p>
+          <p>PowerLend Mission</p>
         </div>
         <div class="about_textBox">
           <p class="about_text about_head">Our Mission</p>
@@ -36,7 +36,7 @@ export default function About() {
       &nbsp;
       <div class="about_card" data-aos="fade-up">
         <div className='about_inner_text'>
-          <p>Quality You Can Trust</p>
+          <p>Quality Trust</p>
         </div>
         <div class="about_textBox">
           <p class="about_text about_head">Quality You Can Trust</p>

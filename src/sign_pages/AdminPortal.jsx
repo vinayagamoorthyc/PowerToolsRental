@@ -5,7 +5,7 @@ import Table from 'react-bootstrap/Table';
 import "../components/AppBar.jsx";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -14,7 +14,6 @@ export default function AdminPortal() {
     const [image, setImage] = useState(upimg);
     const [products,setProducts]=useState([]);
     const [show, setShow] = useState(false);
-    const navigate = useNavigate();
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -38,13 +37,13 @@ export default function AdminPortal() {
       axios.post("https://powerlendbackend.onrender.com/createProduct", {proname, prorate, desc, overview, avail, category, imgurl})
       .then(()=>{
         alert("Your Product is added to Inventory!")
-        navigate("/AdminPortal")
+        window.location.reload()
       }).catch(err=>console.log(err))
     }
 
     const handleDelete=(id)=>{
       axios.delete("https://powerlendbackend.onrender.com/deleteProduct/"+id)
-      .then(()=>navigate("/AdminPortal"))
+      .then(()=>window.location.reload())
       .catch(err=> console.log(err))
     }
 
