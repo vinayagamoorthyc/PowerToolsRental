@@ -9,8 +9,8 @@
 }
 
 .about_card{
-    width: 70%;
-    height: 290px;
+    max-width: 80%;
+    min-height: 295px;
     background: #000000;
     border-radius: 20px;
     display: flex;
@@ -19,7 +19,7 @@
     justify-content: center;
     color: white;
     transition: 0.2s ease-in-out;
-    overflow: hidden;
+    padding: 10px;
   }
   
   .about_inner_text {
@@ -30,6 +30,7 @@
     transition: 0.5s ease-in-out;
     z-index: 1;
     color: #ffc400;
+    text-align: center;
   }
   
   .about_textBox{
@@ -46,12 +47,13 @@
   .about_textBox> .about_text{
     font-family: Montserrat, sans-serif;
     font-weight: bold;
+    
   }
   
   .about_textBox> .about_head {
     color: #ffc506;
     font-family: Montserrat, sans-serif;
-    font-size: 30px;
+    font-size: 19px;
   }
   
   .about_textBox> span {
