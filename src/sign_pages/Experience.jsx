@@ -8,7 +8,7 @@ export default function Experience() {
 
     const [userexp, setUserexp] = useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:3002/getUserexp')
+        axios.get('https://powerlendbackend.onrender.com/getUserexp')
         .then(e =>setUserexp(e.data))
         .catch(err=>console.log(err));
     }, []);

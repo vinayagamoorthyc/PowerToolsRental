@@ -18,7 +18,7 @@ export default function Footer() {
   const [report, setReport] = useState();
 
   const SubmitExp=(e)=>{
-    axios.post("http://localhost:3002/createExperience", {name, experience})
+    axios.post("https://powerlendbackend.onrender.com/createExperience", {name, experience})
     .then(res=> {console.log(res)
       alert("Thank you for submitted your experience!")
       window.location.reload()
@@ -26,7 +26,7 @@ export default function Footer() {
     .catch(err=>console.log(err))
   }
   const SubmitReport=(e)=>{
-    axios.post("http://localhost:3002/createReport", {repname, report})
+    axios.post("https://powerlendbackend.onrender.com/createReport", {repname, report})
     .then(()=>{
       alert("Thank you for submitting your error Report to us!")
       window.location.reload()

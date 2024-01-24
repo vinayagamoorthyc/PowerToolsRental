@@ -9,13 +9,13 @@ export default function TopCat() {
 
     const [products,setProducts]=useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:3002/getProduct')
+        axios.get('https://powerlendbackend.onrender.com/getProduct')
         .then(e =>setProducts(e.data))
         .catch(err=>console.log(err));
         }, []);
 
-    const product=allProducts.map(e=>(
-        <Products url={e.url} name={e.name} id={e._id} rate={e.rate}/>
+    const product=products.map(e=>(
+        <Products url={e.imgurl} name={e.proname} id={e._id} rate={e.prorate}/>
     ));
     return (
         <div>

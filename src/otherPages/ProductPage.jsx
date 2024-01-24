@@ -21,7 +21,7 @@ export default function ProductPage() {
 
   console.log(id)
   useEffect(()=>{
-    axios.get("http://localhost:3002/getUp/"+id)
+    axios.get("https://powerlendbackend.onrender.com/getUp/"+id)
       .then(e=>{ console.log(e)
         setProname(e.data.proname)
         setProrate(e.data.prorate)  
