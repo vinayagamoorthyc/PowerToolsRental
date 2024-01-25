@@ -5,10 +5,18 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import 'typeface-montserrat';
 import Aos from 'aos';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 export default function ProductPage() {
+
+  const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
   const {id} = useParams();
   const [proname,setProname]=useState();
     const [prorate,setProrate]=useState();
@@ -17,6 +25,8 @@ export default function ProductPage() {
     const [avail,setAvail]=useState();
     const [category,setCategory]=useState();
     const [imgurl,setImgurl]=useState();
+    const [days,setDays]=useState();
+    const navigate = useNavigate();
 
   console.log(id)
   useEffect(()=>{
@@ -33,6 +43,15 @@ export default function ProductPage() {
       .catch(err=>console.log(err))
     Aos.init({duration: 1500});
     }, []);
+
+    const InsertCart=(e)=>{
+      e.preventDefault();
+      axios.post("http://localhost:3002/createCart", {proname, prorate, days,imgurl})
+      .then(()=>{
+        handleShow();
+      }).catch(err=>console.log(err))
+    }
+
   return (
     <div>
       <div style={{background:"black", padding:"5px",position:"fixed",width:"100%",zIndex:"1"}} className='blacknav'>
@@ -51,7 +70,6 @@ export default function ProductPage() {
             <div>
               <h4>{proname}</h4>
             </div>
-            <form action="">
             <div>
               <div class="rating">
                 <input value="5" name="rating" id="star5" type="radio"/>
@@ -75,9 +93,12 @@ export default function ProductPage() {
               </div>
             </div>
             &nbsp;
+            <form onSubmit={InsertCart}>
             <div style={{display:"flex", flexDirection:"column"}}>
               <h5>How many days?</h5>
-              <input type="number" style={{border:"1.9px solid rgba(0, 0, 0, 0.707)", width:"73%"}}/>
+              <input type="number" required={true} placeholder='Required Days' onChange={(e)=>setDays(e.target.value)}
+              style={{border:"1.9px solid rgba(0, 0, 0, 0.707)", width:"78%"}}
+              />
             </div>
             &nbsp;
             <div>
@@ -112,7 +133,18 @@ export default function ProductPage() {
             </Tab>
           </Tabs>
         </div>&nbsp;
-        
+        <Modal show={show} onHide={handleClose} backdrop="static">
+                    <Modal.Header closeButton>
+                      <Modal.Title>Add to Cart</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>You have added this product to your cart and now can checkout that in cart!
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="warning" onClick={()=>navigate("/")}>
+                        Ok
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
     </div>
   )
 }

@@ -151,7 +151,6 @@ export default function AdminPortal() {
                       <Modal.Title>Remove Product</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>Are you sure to permanently delete this product from your inventory?
-                      After Delete, You have to reload the current page!
                     </Modal.Body>
                     <Modal.Footer>
                       <Button variant="outline-secondary" onClick={handleClose}>

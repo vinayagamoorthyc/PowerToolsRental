@@ -1,20 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ".//CartDetails.css";
 import 'typeface-montserrat';
+import axios from 'axios';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
-export default function CartDetails() {
+export default function CartDetails(props) {
+
+  const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+  const handleDelete=(id)=>{
+    axios.delete("http://localhost:3002/deleteCart/"+id)
+    .then(()=>{
+      window.location.reload();
+    })
+    .catch(err=> console.log(err))
+  }
+
   return (
     <div className='cartview'>
       <div>
-        <img src="https://dewalt.com/NAG/PRODUCT/IMAGES/HIRES/DCS570B/DCS570B_1.jpg?resize=530x530" width={100} alt="" />
+        <img src={props.imgurl} width={70} alt="" />
       </div>
-      <div className='cartdetails'>
-        <div>: Circular Saw</div>
-        <div>: ₹ 21.00</div>
-        <div>: 7 days</div>
-      </div>
+      <ul className='cartdetails'>
+        <div style={{width:"200px",maxHeight:"67px",overflow:"hidden"}}>• {props.proname}</div>
+        <div>• ₹ {props.prorate}.00 per day</div>
+        <div>• {props.days} days</div>
+      </ul>
       <div>
-      <button class="buton">
+      <button class="buton" onClick={()=>handleShow()}>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -55,6 +72,21 @@ export default function CartDetails() {
 </button>
 
       </div>
+      <Modal show={show} onHide={handleClose} backdrop="static">
+                    <Modal.Header closeButton>
+                      <Modal.Title>Remove Product</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Are you sure to remove this product from your Cart List?
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="outline-secondary" onClick={handleClose}>
+                        Cancel
+                      </Button>
+                      <Button variant="danger" onClick={()=>handleDelete(props._id)}>
+                        Remove
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
     </div>
   )
 }

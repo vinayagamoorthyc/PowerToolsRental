@@ -4,14 +4,26 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './/AppBar.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import CartDetails from '../otherPages/CartDetails';
 import 'typeface-montserrat';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function AppBar() {
   const [show, setShow] = useState(false);
+  const [cartProducts, setCartProducts]=useState([]);
+
+  useEffect(()=>{
+    axios.get('http://localhost:3002/getCart')
+    .then(e =>setCartProducts(e.data))
+    .catch(err=>console.log(err));
+    }, []);
+
+    const cartpros=cartProducts.map(e=>
+      <CartDetails imgurl={e.imgurl} proname={e.proname} _id={e._id} prorate={e.prorate} days={e.days}/>
+    );
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -73,21 +85,13 @@ function AppBar() {
         </Offcanvas.Header>
         <Offcanvas.Body style={{fontFamily:"Montserrat, sans-serif"}}>
           <div>
-            <div>
-            <CartDetails/>&nbsp;
-            <CartDetails/>&nbsp;
-            <CartDetails/>&nbsp;
-            <CartDetails/>&nbsp;
-            <CartDetails/>&nbsp;
-            <CartDetails/>&nbsp;
-            <CartDetails/>&nbsp;
-            <CartDetails/>&nbsp;
-            <CartDetails/>&nbsp;
+            <div style={{display:"flex",flexDirection:"column",gap:"10px"}}>
+              {cartpros}
             </div> 
           </div>
         </Offcanvas.Body>
         <div><center>
-          <p style={{fontFamily:'Montserrat, sans-serif',fontWeight:"800",color:"black"}}>Sub Total: ₹ 63.00</p>
+          <p style={{fontFamily:'Montserrat, sans-serif',fontWeight:"800",color:"black"}}>Sub Total: ₹ 0</p>
           <Link to="/CheckOut">
               <button class="checkout_btn">
                 <b>Check Out</b>
