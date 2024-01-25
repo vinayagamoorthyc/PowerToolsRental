@@ -3,10 +3,9 @@ import './/ProductPage.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import Footer from '../components/Footer';
 import 'typeface-montserrat';
 import Aos from 'aos';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 export default function ProductPage() {
