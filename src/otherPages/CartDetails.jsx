@@ -13,7 +13,7 @@ export default function CartDetails(props) {
     const handleShow = () => setShow(true);
 
   const handleDelete=(id)=>{
-    axios.delete("http://localhost:3002/deleteCart/"+id)
+    axios.delete("https://powerlendbackend.onrender.com/deleteCart/"+id)
     .then(()=>{
       window.location.reload();
     })

@@ -46,7 +46,7 @@ export default function ProductPage() {
 
     const InsertCart=(e)=>{
       e.preventDefault();
-      axios.post("http://localhost:3002/createCart", {proname, prorate, days,imgurl})
+      axios.post("https://powerlendbackend.onrender.com/createCart", {proname, prorate, days,imgurl})
       .then(()=>{
         handleShow();
       }).catch(err=>console.log(err))

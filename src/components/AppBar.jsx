@@ -16,7 +16,7 @@ function AppBar() {
   const [cartProducts, setCartProducts]=useState([]);
 
   useEffect(()=>{
-    axios.get('http://localhost:3002/getCart')
+    axios.get('https://powerlendbackend.onrender.com/getCart')
     .then(e =>setCartProducts(e.data))
     .catch(err=>console.log(err));
     }, []);
