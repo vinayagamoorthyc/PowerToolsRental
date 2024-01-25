@@ -9,8 +9,8 @@
 }
 
 .about_card{
-    max-width: 80%;
-    min-height: 295px;
+    width: 70%;
+    height: 290px;
     background: #000000;
     border-radius: 20px;
     display: flex;
