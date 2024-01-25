@@ -10,7 +10,7 @@
 
 .about_card{
     width: 70%;
-    height: 290px;
+    min-height: 290px;
     background: #000000;
     border-radius: 20px;
     display: flex;
