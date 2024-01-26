@@ -159,7 +159,7 @@
     font-weight: 600;
   }
   
-  .signUp_content__form button {
+  .signUp_content__form .register {
     background: #ffc400;
     color: rgb(0, 0, 0);
     border: none;
@@ -172,7 +172,7 @@
     width: 150px;
   }
   
-  .signUp_content__form button:hover {
+  .signUp_content__form .register:hover {
     background: #000000;
     color: #ffc400;
     width: 200px;

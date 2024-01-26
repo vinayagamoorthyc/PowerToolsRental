@@ -1,10 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './/SignUp.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import 'typeface-montserrat';
 import Aos from 'aos';
+import axios from 'axios';
 
 export default function SignUp() {
+
+  const [username, setUsername]=useState();
+  const [email, setEmail]=useState();
+  const [phone, setPhone]=useState();
+  const [password, setPassword]=useState();
+  const navigate = useNavigate();
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    axios.post("http://localhost:3002/register", {username, email, phone, password})
+    .then((e)=>{
+      navigate("/SignIn");
+    }).catch(err=>console.log(err))
+  }
+
   useEffect(()=>{
     Aos.init({duration: 1500});
     }, []);
@@ -28,26 +44,26 @@ export default function SignUp() {
     <div class="signUp_container" data-aos="zoom-in">
     <div class="signUp_content">
     <img src="https://i.postimg.cc/ZKR8bvHf/Power-Tools.png" width={140} alt="" />
-      <form class="signUp_content__form">
+      <form class="signUp_content__form" onSubmit={handleSubmit}>
         <div class="signUp_content__inputs">
           <label>
-            <input required="" type="text"/>
+            <input required={true} type="text" onChange={(e)=>setUsername(e.target.value)}/>
             <span>Username</span>
           </label>
           <label>
-            <input required="" type="text"/>
+            <input required={true} type="text" onChange={(e)=>setEmail(e.target.value)}/>
             <span>Email</span>
           </label>
           <label>
-            <input required="" type="number"/>
+            <input required={true} type="number" onChange={(e)=>setPhone(e.target.value)}/>
             <span>Phone number</span>
           </label>
           <label>
-            <input required="" type="password"/>
+            <input required={true} type="password" onChange={(e)=>setPassword(e.target.value)}/>
             <span>Password</span>
           </label>
         </div>
-        <Link to="/SignIn"><button>Register</button></Link>
+        <button className='register' type='submit'>Register</button>
       </form>
       <div class="signUp_content__forgot-buttons">
         <button>

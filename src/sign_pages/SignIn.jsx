@@ -1,11 +1,33 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './/SignIn.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import 'typeface-montserrat';
 import Aos from 'aos';
+import axios from 'axios';
 
 export default function SignIn() {
+
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const navigate = useNavigate();
+
+  axios.defaults.withCredentials = true;
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    axios.post("http://localhost:3002/login", {email, password})
+    .then((res)=>{
+      if(res.data.Status === "success"){
+        if(res.data.role === "admin"){
+          navigate("/AdminPortal");
+        }else{
+          navigate("/");
+        }
+      }
+    }).catch(err=>console.log(err))
+  }
+
   useEffect(()=>{
     Aos.init({duration: 1500});
     }, []);
@@ -28,18 +50,18 @@ export default function SignIn() {
     <div class="signIn_container" data-aos="zoom-in">
     <div class="content">
     <img src="https://i.postimg.cc/ZKR8bvHf/Power-Tools.png" width={140} alt="" />
-      <form class="content__form">
+      <form class="content__form" onSubmit={handleSubmit}>
         <div class="content__inputs">
           <label>
-            <input required="" type="text"/>
-            <span>Phone number or email</span>
+            <input required={true} type="text" onChange={e=>setEmail(e.target.value)}/>
+            <span>Enter your Email</span>
           </label>
           <label>
-            <input required="" type="password"/>
+            <input required={true} type="password" onChange={e=>setPassword(e.target.value)}/>
             <span>Password</span>
           </label>
         </div>
-        <Link className='login_btn' to='/'><button>Log In</button></Link>
+        <div className='login_btn'><button type='submit'>Log In</button></div>
         <Link to="/AdminPortal" style={{color: 'black',fontSize:"13px",fontWeight:"600"}}>Temporary AdminPortal</Link>
       </form>
       <div class="content__or-text">
