@@ -20,6 +20,9 @@ export default function AdminPortal() {
     const handleShow = () => setShow(true);
     axios.defaults.withCredentials = true;
     useEffect(()=>{
+      axios.get('https://powerlendbackend.onrender.com/getProduct')
+      .then(e =>setProducts(e.data))
+      .catch(err=>console.log(err));
       axios.get('http://localhost:3002/admin')
       .then(res=>{
         if(res.data === "success"){
@@ -28,9 +31,6 @@ export default function AdminPortal() {
           alert("admin login error!");
         }
       }).catch(err=>console.log(err));
-      axios.get('https://powerlendbackend.onrender.com/getProduct')
-      .then(e =>setProducts(e.data))
-      .catch(err=>console.log(err));
       }, []);
 
     const [proname,setProname]=useState();
