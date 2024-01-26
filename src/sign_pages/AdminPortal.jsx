@@ -23,14 +23,6 @@ export default function AdminPortal() {
       axios.get('https://powerlendbackend.onrender.com/getProduct')
       .then(e =>setProducts(e.data))
       .catch(err=>console.log(err));
-      axios.get('https://powerlendbackend.onrender.com/admin')
-      .then(res=>{
-        if(res.data === "success"){
-          console.log("hello admin!")
-        }else{
-          alert("admin login error!");
-        }
-      }).catch(err=>console.log(err));
       }, []);
 
     const [proname,setProname]=useState();

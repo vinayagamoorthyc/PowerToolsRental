@@ -24,6 +24,8 @@ export default function SignIn() {
         }else{
           navigate("/");
         }
+      }else{
+        alert("error")
       }
     }).catch(err=>console.log(err))
   }
