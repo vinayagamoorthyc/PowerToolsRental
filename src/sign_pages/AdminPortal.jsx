@@ -23,7 +23,7 @@ export default function AdminPortal() {
       axios.get('https://powerlendbackend.onrender.com/getProduct')
       .then(e =>setProducts(e.data))
       .catch(err=>console.log(err));
-      axios.get('http://localhost:3002/admin')
+      axios.get('https://powerlendbackend.onrender.com/admin')
       .then(res=>{
         if(res.data === "success"){
           console.log("hello admin!")

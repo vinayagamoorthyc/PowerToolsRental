@@ -16,7 +16,7 @@ export default function SignIn() {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.post("http://localhost:3002/login", {email, password})
+    axios.post("https://powerlendbackend.onrender.com/login", {email, password})
     .then((res)=>{
       if(res.data.Status === "success"){
         if(res.data.role === "admin"){
