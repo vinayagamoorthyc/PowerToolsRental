@@ -82,7 +82,7 @@ export default function CartDetails(props) {
                       <Button variant="outline-secondary" onClick={handleClose}>
                         Cancel
                       </Button>
-                      <Button variant="danger" onClick={()=>handleDelete(props._id)}>
+                      <Button variant="danger" onClick={(e)=>handleDelete(props._id)}>
                         Remove
                       </Button>
                     </Modal.Footer>
