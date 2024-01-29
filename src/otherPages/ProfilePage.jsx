@@ -54,14 +54,14 @@ export default function ProfilePage() {
           </MDBCol>
         </MDBRow>
         
-        <MDBRow style={{}} data-aos="zoom-in">
+        <MDBRow data-aos="zoom-in">
           <MDBCol lg="4">
             <MDBCard className="mb-4" style={{width:"100%",height:"100%",padding:"55px"}}>
               <MDBCardBody className="text-center">
               <div className="image-preview" style={{ backgroundImage: `url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp)` }} />
                 <p style={{fontWeight:"bolder",marginTop:"10px",fontFamily:"Montserrat, sans-serif"}} className="text-muted mb-1">{username}</p>
                 <div style={{marginTop:"10px"}} className="d-flex justify-content-center mb-2">
-                  <Link to="/EditProfile" style={{textDecoration:"none"}}><button class="edit">Edit Profile</button></Link>
+                  <Link to={`/EditProfile/${userid}`} style={{textDecoration:"none"}}><button class="edit">Edit Profile</button></Link>
                 </div>
               </MDBCardBody>
             </MDBCard>

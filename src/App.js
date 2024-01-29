@@ -27,7 +27,7 @@ function App() {
         <Route path='/ProductPage/:id' element={<ProductPage/>}/>
         <Route path='/AllProducts' element={<AllProducts/>}/>
         <Route path='/ProfilePage' element={<ProfilePage/>}/>
-        <Route path='/EditProfile' element={<EditProfile/>}/>
+        <Route path='/EditProfile/:id' element={<EditProfile/>}/>
         <Route path='/AdminPortal' element={<AdminPortal/>}/>
         <Route path='/Track' element={<Track/>}/>
         <Route path='/Reports' element={<Reports/>}/>
