@@ -15,7 +15,7 @@ export default function Products(props) {
       <div class="text">
         <p class="h3">{props.name}</p>
 
-        <Link to={`/ProductPage/${props.id}`}  style={{textDecoration:"none"}}><button class="ui-btn">
+        <Link to={`/ProductPage/${props._id}`}  style={{textDecoration:"none"}} onClick={()=>window.scrollTo(0,0)}><button class="ui-btn">
               <span>Pick ₹{props.rate}</span>
             </button></Link>
       </div>

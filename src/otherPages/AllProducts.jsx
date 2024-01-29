@@ -8,13 +8,13 @@ import Form from 'react-bootstrap/Form';
 import Footer from '../components/Footer';
 import 'typeface-montserrat';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export default function AllProducts() {
   const [products,setProducts]=useState([]);
 
   useEffect(()=>{
-    axios.get('https://powerlendbackend.onrender.com/getProduct')
+    axios.get('http://localhost:3002/getProduct')
     .then(e =>setProducts(e.data))
     .catch(err=>console.log(err));
     }, []);
@@ -40,7 +40,7 @@ export default function AllProducts() {
   return (
     <div>
       <div style={{
-        background:"black", display:"flex",flexDirection:"row",justifyContent:"space-between",alignItems:"center"
+        background:"black", display:"flex",flexDirection:"row",justifyContent:"space-between",alignItems:"center",paddingLeft:"7px"
         }} className='blacknav'>
         <Link to='/'><button class="Back_Btn">
           <Link to='/' class="back_icon"><svg class="svg-icon" viewBox="0 0 20 20">

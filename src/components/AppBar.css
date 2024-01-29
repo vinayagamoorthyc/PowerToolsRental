@@ -9,7 +9,14 @@
   background-color: #c3c3c337 !important;
   backdrop-filter: blur(8px);
 }
-
+.modal-bg{
+  backdrop-filter: blur(15px) saturate(200%);
+  -webkit-backdrop-filter: blur(15px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.255);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  color: white;
+}
 .checkout_btn{
   position: relative;
   font-size: 1.2em;

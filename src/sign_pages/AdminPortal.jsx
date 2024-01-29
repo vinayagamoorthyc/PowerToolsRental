@@ -19,8 +19,9 @@ export default function AdminPortal() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     axios.defaults.withCredentials = true;
+    
     useEffect(()=>{
-      axios.get('https://powerlendbackend.onrender.com/getProduct')
+      axios.get('http://localhost:3002/getProduct')
       .then(e =>setProducts(e.data))
       .catch(err=>console.log(err));
       }, []);
@@ -35,7 +36,7 @@ export default function AdminPortal() {
 
     const InsertProduct=(e)=>{
       e.preventDefault();
-      axios.post("https://powerlendbackend.onrender.com/createProduct", {proname, prorate, desc, overview, avail, category, imgurl})
+      axios.post("http://localhost:3002/createProduct", {proname, prorate, desc, overview, avail, category, imgurl})
       .then(()=>{
         alert("Your Product is added to Inventory!")
         window.location.reload()
@@ -43,7 +44,7 @@ export default function AdminPortal() {
     }
 
     const handleDelete=(id)=>{
-      axios.delete("https://powerlendbackend.onrender.com/deleteProduct/"+id)
+      axios.delete("http://localhost:3002/deleteProduct/"+id)
       .then(()=>window.location.reload())
       .catch(err=> console.log(err))
     }

@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import About_Nav from './About_Nav'
+import React, { useEffect, useState } from 'react'
 import Footer from '../components/Footer';
 import "../components/Search.css"; 
 import "../otherPages/ProductPage.css";
@@ -15,23 +14,42 @@ import {
 import Aos from 'aos';
 import 'typeface-montserrat';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import AppBar from '../components/AppBar';
 
 
 export default function ProfilePage() {
+
+  const userid = window.localStorage.getItem("userid");
+  const [username, setUsername]=useState("Nothing to show");
+  const [email, setEmail]=useState("Nothing to show");
+  const [phone, setPhone]=useState("0000000000");
+  const [address, setAddress]=useState("Nothing to show");
+  const [orders, setOrders]=useState("Nothing to show");
+
+
   useEffect(()=>{
+    axios.get("http://localhost:3002/getUser/"+userid)
+    .then((e)=>{
+      setUsername(e.data.username);
+      setEmail(e.data.email);
+      setPhone(e.data.phone);
+      setAddress(e.data.address);
+      setOrders(e.data.orders);
+    }).catch(err=>console.log(err));
     Aos.init({duration: 2000});
     }, []);
   
   return (
     <div>
-      <About_Nav/>
+      <AppBar/>
       <div>
       <section style={{backgroundColor:"#eee"}}>
       <MDBContainer className="py-5">
       <MDBRow>
           <MDBCol>
               <center>
-                <div className='welcome_profile'><strong>Welcome</strong> Vinayaga Moorthy C!</div>
+                <div className='welcome_profile'><strong>Welcome</strong> {username}!</div>
               </center>
           </MDBCol>
         </MDBRow>
@@ -41,7 +59,7 @@ export default function ProfilePage() {
             <MDBCard className="mb-4" style={{width:"100%",height:"100%",padding:"55px"}}>
               <MDBCardBody className="text-center">
               <div className="image-preview" style={{ backgroundImage: `url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp)` }} />
-                <p style={{fontWeight:"bolder",marginTop:"10px",fontFamily:"Montserrat, sans-serif"}} className="text-muted mb-1">Vinayaga Moorthy c</p>
+                <p style={{fontWeight:"bolder",marginTop:"10px",fontFamily:"Montserrat, sans-serif"}} className="text-muted mb-1">{username}</p>
                 <div style={{marginTop:"10px"}} className="d-flex justify-content-center mb-2">
                   <Link to="/EditProfile" style={{textDecoration:"none"}}><button class="edit">Edit Profile</button></Link>
                 </div>
@@ -50,23 +68,23 @@ export default function ProfilePage() {
           </MDBCol>
 
           <MDBCol lg="8">
-            <MDBCard className="mb-4" style={{width:"100%",height:"100%",fontFamily:"Montserrat, sans-serif"}}>
+            <MDBCard className="mb-4" style={{width:"100%",height:"100%",fontFamily:"Montserrat, sans-serif",textAlign:"left"}}>
               <MDBCardBody>
                 <MDBRow>
-                  <MDBCol sm="4">
+                  <MDBCol sm="5">
                     <MDBCardText className='detail_head'>Full Name</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">Vinayaga Moorthy C</MDBCardText>
+                    <MDBCardText className="text-muted">{username}</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
                 <MDBRow>
-                  <MDBCol sm="4">
+                  <MDBCol sm="9">
                     <MDBCardText className='detail_head'>Email</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">sanjaiiti2709@gmail.com</MDBCardText>
+                    <MDBCardText className="text-muted">{email}</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -75,25 +93,25 @@ export default function ProfilePage() {
                     <MDBCardText className='detail_head'>Mobile</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">+91 9360810429</MDBCardText>
+                    <MDBCardText className="text-muted">+91 {phone}</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
                 <MDBRow>
-                  <MDBCol sm="4">
+                  <MDBCol sm="9">
                     <MDBCardText className='detail_head'> Delivery Address</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">No.7, Karpaga Vinayagar Nagar,Bus Stop, Othakalmandapam, Coimbatore</MDBCardText>
+                    <MDBCardText className="text-muted">{address}</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
                 <MDBRow>
-                  <MDBCol sm="4">
+                  <MDBCol sm="6">
                     <MDBCardText className='detail_head'>Orders Placed</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">10</MDBCardText>
+                    <MDBCardText className="text-muted">{orders}</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 
@@ -106,7 +124,6 @@ export default function ProfilePage() {
     </section>
       </div>
       <Footer/>
-      
     </div>
   )
 }

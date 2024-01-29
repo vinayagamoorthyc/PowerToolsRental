@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react'
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
 import './/About.css';
-import About_Nav from './About_Nav';
 import 'typeface-montserrat';
 import Aos from 'aos';
+import AppBar from '../components/AppBar';
 
 export default function About() {
+
   useEffect(()=>{
     Aos.init({duration: 1000});
     }, []);
   return (
     <div>
-      <About_Nav/>
+      <AppBar/>
       <div className='about' >
       &nbsp;
       <div class="about_card" data-aos="fade-up">

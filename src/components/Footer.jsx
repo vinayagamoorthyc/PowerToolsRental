@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   MDBFooter,
   MDBContainer,
@@ -16,7 +16,16 @@ export default function Footer() {
   const [experience, setExperience] = useState();
   const [repname, setRepname] = useState();
   const [report, setReport] = useState();
+  const [hide,setHide]=useState(true);
+  const logedin = window.localStorage.getItem("IsLogedIn");
 
+  useEffect(()=>{
+    if(logedin){
+      setHide(false);
+    }else{
+      setHide(true);
+    }
+  }, []);
   const SubmitExp=(e)=>{
     axios.post("https://powerlendbackend.onrender.com/createExperience", {name, experience})
     .then(res=> {console.log(res)
@@ -108,20 +117,20 @@ export default function Footer() {
         </section>
 
         <section className='mb-4'>
-          <Link to="/ProfilePage"><Button variant="outline-warning">Profile</Button></Link>{' '}&nbsp;
+          <Link to='/ProfilePage'><Button variant="outline-warning" hidden={hide}>Profile</Button></Link>{' '}&nbsp;
 
-          <Link to="/About"><Button variant="outline-warning">About</Button></Link>{' '}&nbsp;
+          <Link to='/About'><Button variant="outline-warning">About</Button></Link>{' '}&nbsp;
 
-          <Link to="/AllProducts"><Button variant="outline-warning">Products</Button></Link>{' '}
+          <Link to='/AllProducts'><Button variant="outline-warning">Products</Button></Link>{' '}
         </section>
 
       </MDBContainer>
 
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
         © 2024 Copyright:&nbsp;
-        <a className='text-white' href='/About'>
+        <Link className='text-white' to='/About'>
           PowerLend.com
-        </a>
+        </Link>
       </div>
     </MDBFooter>
   );

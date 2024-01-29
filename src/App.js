@@ -16,12 +16,13 @@ import CheckOut from './payments/CheckOut';
 import ProUpdate from './sign_pages/ProUpdate';
 
 function App() {
+  const login = window.localStorage.getItem("IsLogedIn");
   return (
     <div className="App"> 
       <Routes>
         <Route path='/SignIn' element={<SignIn/>} />
         <Route path='/SignUp' element={<SignUp/>} />
-        <Route path='/' element={<MainPage/>} />
+        <Route path='/' element={login? <MainPage/> : <MainPage/>} />
         <Route path='/About' element={<About/>}/>
         <Route path='/ProductPage/:id' element={<ProductPage/>}/>
         <Route path='/AllProducts' element={<AllProducts/>}/>

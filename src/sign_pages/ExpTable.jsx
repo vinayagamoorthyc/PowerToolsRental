@@ -2,7 +2,7 @@ import axios from "axios";
 
 function ExpTable(props) {
   const handleDelete=(id)=>{
-    axios.delete('https://powerlendbackend.onrender.com/deleteExp/'+id).
+    axios.delete('http://localhost:3002/deleteExp/'+id).
     then(e=> {console.log(e)
       window.location.reload()
     })

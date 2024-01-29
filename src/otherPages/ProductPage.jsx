@@ -4,11 +4,13 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import 'typeface-montserrat';
+import Footer from '../components/Footer';
 import Aos from 'aos';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import AppBar from '../components/AppBar';
 
 export default function ProductPage() {
 
@@ -27,10 +29,11 @@ export default function ProductPage() {
     const [imgurl,setImgurl]=useState();
     const [days,setDays]=useState();
     const navigate = useNavigate();
+    const [hide,setHide]=useState(true);
+    const logedin = window.localStorage.getItem("IsLogedIn");
 
-  console.log(id)
   useEffect(()=>{
-    axios.get("https://powerlendbackend.onrender.com/getUp/"+id)
+    axios.get("http://localhost:3002/getUp/"+id)
       .then(e=>{ console.log(e)
         setProname(e.data.proname)
         setProrate(e.data.prorate)  
@@ -40,13 +43,18 @@ export default function ProductPage() {
         setCategory(e.data.category)
         setImgurl(e.data.imgurl)
       })
-      .catch(err=>console.log(err))
+      .catch(err=>console.log(err));
+      if(logedin){
+        setHide(false);
+      }else{
+        setHide(true);
+      }
     Aos.init({duration: 1500});
     }, []);
 
     const InsertCart=(e)=>{
       e.preventDefault();
-      axios.post("https://powerlendbackend.onrender.com/createCart", {proname, prorate, days,imgurl})
+      axios.post("http://localhost:3002/createCart", {proname, prorate, days,imgurl})
       .then(()=>{
         handleShow();
       }).catch(err=>console.log(err))
@@ -54,14 +62,7 @@ export default function ProductPage() {
 
   return (
     <div>
-      <div style={{background:"black", padding:"5px",position:"fixed",width:"100%",zIndex:"1"}} className='blacknav'>
-        <Link to='/AllProducts'><button class="Back_Btn">
-          <Link to='/AllProducts' class="back_icon"><svg class="svg-icon" viewBox="0 0 20 20">
-							<path fill="black" d="M8.388,10.049l4.76-4.873c0.303-0.31,0.297-0.804-0.012-1.105c-0.309-0.304-0.803-0.293-1.105,0.012L6.726,9.516c-0.303,0.31-0.296,0.805,0.012,1.105l5.433,5.307c0.152,0.148,0.35,0.223,0.547,0.223c0.203,0,0.406-0.08,0.559-0.236c0.303-0.309,0.295-0.803-0.012-1.104L8.388,10.049z"></path>
-						  </svg></Link>
-          <Link to='/AllProducts' class="back_text">Back</Link>
-        </button></Link>
-        </div>
+      <AppBar/>
         <div className='pro_view'>
           <div  data-aos="zoom-in">
             <img className='pro_img' src={imgurl} width={350} alt="" />
@@ -98,12 +99,13 @@ export default function ProductPage() {
               <h5>How many days?</h5>
               <input type="number" required={true} placeholder='Required Days' onChange={(e)=>setDays(e.target.value)}
               style={{border:"1.9px solid rgba(0, 0, 0, 0.707)", width:"78%"}}
+              disabled={hide}
               />
             </div>
             &nbsp;
             <div>
               <p>
-                <button type='submit' class="cssbuttons-io-button">
+                <button type='submit' class="cssbuttons-io-button" hidden={hide}>
                   Get now
                   <div class="icon">
                     <i class="bi bi-cart"></i>
@@ -133,18 +135,19 @@ export default function ProductPage() {
             </Tab>
           </Tabs>
         </div>&nbsp;
-        <Modal show={show} onHide={handleClose} backdrop="static">
+        <Modal show={show} onHide={handleClose} backdrop="static" contentClassName='modal-bg'>
                     <Modal.Header closeButton>
                       <Modal.Title>Add to Cart</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>You have added this product to your cart and now can checkout that in cart!
                     </Modal.Body>
                     <Modal.Footer>
-                      <Button variant="warning" onClick={()=>navigate("/")}>
+                      <Button variant="warning" onClick={()=>navigate('/')}>
                         Ok
                       </Button>
                     </Modal.Footer>
                   </Modal>
+        <Footer/>
     </div>
   )
 }

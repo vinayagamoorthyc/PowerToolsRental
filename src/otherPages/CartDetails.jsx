@@ -13,7 +13,7 @@ export default function CartDetails(props) {
     const handleShow = () => setShow(true);
 
   const handleDelete=(id)=>{
-    axios.delete("https://powerlendbackend.onrender.com/deleteCart/"+id)
+    axios.delete("http://localhost:3002/deleteCart/"+id)
     .then(()=>{
       window.location.reload();
     })
@@ -72,14 +72,14 @@ export default function CartDetails(props) {
 </button>
 
       </div>
-      <Modal show={show} onHide={handleClose} backdrop="static">
+      <Modal show={show} onHide={handleClose} backdrop="static" contentClassName='modal-bg'>
                     <Modal.Header closeButton>
-                      <Modal.Title>Remove Product</Modal.Title>
+                      <Modal.Title>Remove from Cart</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>Are you sure to remove this product from your Cart List?
                     </Modal.Body>
                     <Modal.Footer>
-                      <Button variant="outline-secondary" onClick={handleClose}>
+                      <Button variant="outline-light" onClick={handleClose}>
                         Cancel
                       </Button>
                       <Button variant="danger" onClick={(e)=>handleDelete(props._id)}>

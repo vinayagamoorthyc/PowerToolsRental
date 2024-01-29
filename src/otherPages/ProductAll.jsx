@@ -17,7 +17,7 @@ export default function ProductAll(props) {
             <div style={{fontWeight:"500",textAlign:"center"}}>{props.name}</div>
             <div style={{fontWeight:"bolder"}}>₹ <u>{props.rate}.00</u> /day</div>
             <div style={{fontWeight:"bolder"}}>Available: {props.avail} left</div>
-            <div><Link to={`/ProductPage/${props._id}`}><button class="but">
+            <div><Link to={`/ProductPage/${props._id}`}><button class="but" onClick={()=>window.scrollTo(0,0)}>
                     <span class="but_lg">
                     <span class="but_sl"></span>
                     <span class="but_text">View Tool</span>
