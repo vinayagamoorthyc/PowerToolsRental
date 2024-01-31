@@ -16,9 +16,7 @@ import axios from 'axios';
 function AppBar() {
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
-  const [cartProducts, setCartProducts]=useState([
-    { _id: 1, proname: 'Object 1', imgurl: 'fff',prorate:'1', days: '1' },
-  ]);
+  const [cartProducts, setCartProducts]=useState([]);
   const count = cartProducts.length;
   const [hide,setHide]=useState(true);
   const navigate = useNavigate();
@@ -47,9 +45,7 @@ function AppBar() {
 
   const Logout=()=>{
     window.localStorage.clear();
-    setHide(true);
-    window.location.reload();
-    navigate("/");
+    navigate("/SignIn");
   }
 
   return (
