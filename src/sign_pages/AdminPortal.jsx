@@ -15,16 +15,26 @@ export default function AdminPortal() {
     const [image, setImage] = useState(upimg);
     const [products,setProducts]=useState([]);
     const [show, setShow] = useState(false);
-    const navigate = useNavigate();
-
+    const [show2, setShow2] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const handleClose2 = () => setShow2(false);
+    const handleShow2 = () => setShow2(true);
     axios.defaults.withCredentials = true;
+    const [hide,setHide]=useState(true);
+    const logedin = window.localStorage.getItem("IsLogedIn");
+    const [deleteproid,setDeleteproid]=useState();
     
     useEffect(()=>{
-      axios.get('http://localhost:3002/getProduct')
-      .then(e =>setProducts(e.data))
+      
+      if(logedin){
+        axios.get('http://localhost:3002/getProduct')
+      .then(res =>setProducts(res.data))
       .catch(err=>console.log(err));
+        setHide(false);
+      }else{
+        setHide(true);
+      }
       }, []);
 
     const [proname,setProname]=useState();
@@ -39,19 +49,18 @@ export default function AdminPortal() {
       e.preventDefault();
       axios.post("http://localhost:3002/createProduct", {proname, prorate, desc, overview, avail, category, imgurl})
       .then(()=>{
-        alert("Your Product is added to Inventory!")
-        window.location.reload()
+        handleShow2()
       }).catch(err=>console.log(err))
     }
 
-    const handleDelete=(id)=>{
-      axios.delete("http://localhost:3002/deleteProduct/"+id)
+    const handleDelete=()=>{
+      axios.delete("http://localhost:3002/deleteProduct/"+deleteproid)
       .then(()=>window.location.reload())
       .catch(err=> console.log(err))
     }
 
   return (
-    <div>
+    <div hidden={hide}>
       <AdminNav/>
         &nbsp;
         <div className='admin_view'>
@@ -122,23 +131,10 @@ export default function AdminPortal() {
                 <td>{e.category}</td>
                 <td>
                   <Link to={`/ProUpdate/${e._id}`}><button class="btn btn-warning">Update</button></Link>&nbsp;
-                  <button class="btn btn-outline-danger" onClick={handleShow}>Remove</button>
-
-                  <Modal show={show} onHide={handleClose} backdrop="static">
-                    <Modal.Header closeButton>
-                      <Modal.Title>Remove Product</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>Are you sure to permanently delete this product from your inventory?
-                    </Modal.Body>
-                    <Modal.Footer>
-                      <Button variant="outline-secondary" onClick={handleClose}>
-                        Cancel
-                      </Button>
-                      <Button variant="danger" onClick={()=>handleDelete(e._id)}>
-                        Remove
-                      </Button>
-                    </Modal.Footer>
-                  </Modal>
+                  <button class="btn btn-outline-danger" onClick={()=>{
+                    handleShow();
+                    setDeleteproid(e._id);
+                  }}>Remove</button>
                 </td>
               </tr>
               )
@@ -148,7 +144,33 @@ export default function AdminPortal() {
             </Table>
             </center>
         </div>
-        
+        <Modal show={show} onHide={handleClose} backdrop="static" contentClassName='modal-bg'>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Remove Product</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Are you sure to permanently delete this product from your inventory?
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="dark" onClick={handleClose}>
+                        Cancel
+                      </Button>
+                      <Button variant="danger" onClick={()=>handleDelete()}>
+                        Remove
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
+        <Modal show={show2} onHide={handleClose2} backdrop="static" contentClassName='modal-bg'>
+                    <Modal.Header>
+                      <Modal.Title>Product Added!</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Successfully added to inventory with the Product which is given by you.
+                    </Modal.Body>
+                    <Modal.Footer>
+                    <Button variant="warning" onClick={()=>window.location.reload()}>
+                        Alright
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
     </div>
   )
 }

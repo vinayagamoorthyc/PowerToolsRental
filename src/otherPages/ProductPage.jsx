@@ -139,7 +139,7 @@ export default function ProductPage() {
                     <Modal.Header closeButton>
                       <Modal.Title>Add to Cart</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>You have added this product to your cart and now can checkout that in cart!
+                    <Modal.Body>You have added this product to your cart and now you can checkout that in cart!
                     </Modal.Body>
                     <Modal.Footer>
                       <Button variant="warning" onClick={()=>navigate('/AllProducts')}>

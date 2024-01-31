@@ -22,21 +22,21 @@ function AppBar() {
   const navigate = useNavigate();
   const logedin = window.localStorage.getItem("IsLogedIn");
   const userid = window.localStorage.getItem("userid");
-  
+  const cartpros=cartProducts.map(e=>
+    <CartDetails imgurl={e.imgurl} proname={e.proname} _id={e._id} prorate={e.prorate} days={e.days}/>
+  );
   useEffect(()=>{
-    axios.get('http://localhost:3002/getCart/'+userid)
+    if(logedin){
+      axios.get('http://localhost:3002/getCart/'+userid)
     .then(e =>setCartProducts(e.data))
     .catch(err=>console.log(err));
-    if(logedin){
       setHide(false);
     }else{
       setHide(true);
     }
     }, []);
 
-    const cartpros=cartProducts.map(e=>
-      <CartDetails imgurl={e.imgurl} proname={e.proname} _id={e._id} prorate={e.prorate} days={e.days}/>
-    );
+    
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -45,7 +45,8 @@ function AppBar() {
 
   const Logout=()=>{
     window.localStorage.clear();
-    navigate("/SignIn");
+    navigate("/");
+    window.location.reload();
   }
 
   return (
@@ -121,9 +122,9 @@ function AppBar() {
       </Offcanvas>
       <Modal show={show2} onHide={handleClose2} backdrop="static" contentClassName='modal-bg'>
                     <Modal.Header closeButton>
-                      <Modal.Title>Add to Cart</Modal.Title>
+                      <Modal.Title>Confirm Alert!</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>You have added this product to your cart and now can checkout that in cart!
+                    <Modal.Body>Ensure whether you want to logout your session from our site?
                     </Modal.Body>
                     <Modal.Footer>
                     <Button variant="dark" onClick={()=>handleClose2()}>

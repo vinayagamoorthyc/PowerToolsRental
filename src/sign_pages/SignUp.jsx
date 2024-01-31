@@ -63,7 +63,7 @@ export default function SignUp() {
             <span>Password</span>
           </label>
         </div>
-        <button className='register' type='submit'>Register</button>
+        <center><button className='register' type='submit'>Register</button></center>
       </form>
       <div class="signUp_content__forgot-buttons">
         <button>
