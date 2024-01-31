@@ -18,7 +18,7 @@ export default function ProductPage() {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+    const userid = window.localStorage.getItem("userid");
   const {id} = useParams();
   const [proname,setProname]=useState();
     const [prorate,setProrate]=useState();
@@ -54,7 +54,7 @@ export default function ProductPage() {
 
     const InsertCart=(e)=>{
       e.preventDefault();
-      axios.post("http://localhost:3002/createCart", {proname, prorate, days,imgurl})
+      axios.post("http://localhost:3002/createCart/"+userid, {proname, prorate, days, imgurl})
       .then(()=>{
         handleShow();
       }).catch(err=>console.log(err))
@@ -142,7 +142,7 @@ export default function ProductPage() {
                     <Modal.Body>You have added this product to your cart and now can checkout that in cart!
                     </Modal.Body>
                     <Modal.Footer>
-                      <Button variant="warning" onClick={()=>navigate('/')}>
+                      <Button variant="warning" onClick={()=>navigate('/AllProducts')}>
                         Ok
                       </Button>
                     </Modal.Footer>

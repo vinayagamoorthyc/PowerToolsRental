@@ -8,16 +8,17 @@ import Button from 'react-bootstrap/Button';
 export default function CartDetails(props) {
 
   const [show, setShow] = useState(false);
+  const userid = window.localStorage.getItem("userid");
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
   const handleDelete=(id)=>{
-    axios.delete("http://localhost:3002/deleteCart/"+id)
+    axios.post("http://localhost:3002/deleteCart/"+id,{userid})
     .then(()=>{
-      window.location.reload();
+      window.location.reload()
     })
-    .catch(err=> console.log(err))
+    .catch(err=> console.log(err));
   }
 
   return (
@@ -27,8 +28,8 @@ export default function CartDetails(props) {
       </div>
       <ul className='cartdetails'>
         <div style={{width:"200px",maxHeight:"67px",overflow:"hidden"}}>• {props.proname}</div>
-        <div>• ₹ {props.prorate}.00 per day</div>
-        <div>• {props.days} days</div>
+        <div>• ₹ {props.prorate}.00 / day</div>
+        <div>• For {props.days} days</div>
       </ul>
       <div>
       <button class="buton" onClick={()=>handleShow()}>
@@ -82,7 +83,7 @@ export default function CartDetails(props) {
                       <Button variant="outline-light" onClick={handleClose}>
                         Cancel
                       </Button>
-                      <Button variant="danger" onClick={(e)=>handleDelete(props._id)}>
+                      <Button variant="danger" onClick={()=>handleDelete(props._id)}>
                         Remove
                       </Button>
                     </Modal.Footer>

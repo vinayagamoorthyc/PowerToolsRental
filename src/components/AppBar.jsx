@@ -3,6 +3,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './/AppBar.css';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useEffect, useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
@@ -13,7 +15,10 @@ import axios from 'axios';
 
 function AppBar() {
   const [show, setShow] = useState(false);
-  const [cartProducts, setCartProducts]=useState([]);
+  const [show2, setShow2] = useState(false);
+  const [cartProducts, setCartProducts]=useState([
+    { _id: 1, proname: 'Object 1', imgurl: 'fff',prorate:'1', days: '1' },
+  ]);
   const count = cartProducts.length;
   const [hide,setHide]=useState(true);
   const navigate = useNavigate();
@@ -21,7 +26,7 @@ function AppBar() {
   const userid = window.localStorage.getItem("userid");
   
   useEffect(()=>{
-    axios.get('http://localhost:3002/getCart')
+    axios.get('http://localhost:3002/getCart/'+userid)
     .then(e =>setCartProducts(e.data))
     .catch(err=>console.log(err));
     if(logedin){
@@ -37,15 +42,18 @@ function AppBar() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleClose2 = () => setShow2(false);
+  const handleShow2 = () => setShow2(true);
 
   const Logout=()=>{
     window.localStorage.clear();
     setHide(true);
+    window.location.reload();
     navigate("/");
   }
 
   return (
-    <div className=''>
+    <div>
     <div fluid className='appbar' id='topview' >
       <Navbar fixed='top' expand="lg" className="bg-body-tertiary shadow-lg p-2 mb-1 bg-body navbar">
         <Navbar.Brand><Link to='/About'>
@@ -87,7 +95,7 @@ function AppBar() {
           </Nav>
           &nbsp;
           <Nav>
-          <button class="ui-btn" hidden={hide} onClick={()=>Logout()}>
+          <button class="ui-btn" hidden={hide} onClick={()=>handleShow2()}>
               <span>LogOut</span>
             </button>
           </Nav>
@@ -115,7 +123,21 @@ function AppBar() {
               </center>
             </div>
       </Offcanvas>
-
+      <Modal show={show2} onHide={handleClose2} backdrop="static" contentClassName='modal-bg'>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Add to Cart</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>You have added this product to your cart and now can checkout that in cart!
+                    </Modal.Body>
+                    <Modal.Footer>
+                    <Button variant="dark" onClick={()=>handleClose2()}>
+                        Cancel
+                      </Button>
+                      <Button variant="warning" onClick={()=>Logout()}>
+                        Confirm
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
   </div>
   );
 }
