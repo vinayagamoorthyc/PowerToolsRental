@@ -21,7 +21,7 @@ export default function SignIn() {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.post("http://localhost:3002/login", {email, password})
+    axios.post("https://powerlendbackend.onrender.com/login", {email, password})
     .then((res)=>{window.localStorage.setItem("IsLogedIn", true);
     window.localStorage.setItem("userid", res.data.id);
     window.localStorage.setItem("token", res.data.tok);

@@ -14,7 +14,7 @@ export default function AllProducts() {
   const [products,setProducts]=useState([]);
 
   useEffect(()=>{
-    axios.get('http://localhost:3002/getProduct')
+    axios.get('https://powerlendbackend.onrender.com/getProduct')
     .then(e =>setProducts(e.data))
     .catch(err=>console.log(err));
     }, []);

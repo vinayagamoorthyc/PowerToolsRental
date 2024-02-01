@@ -8,7 +8,7 @@ export default function Reports() {
   const logedin = window.localStorage.getItem("IsLogedIn");
   const [userreport, setUserreport] = useState([]);
   useEffect(()=>{
-    axios.get('http://localhost:3002/getUserreport')
+    axios.get('https://powerlendbackend.onrender.com/getUserreport')
     .then(e =>setUserreport(e.data))
     .catch(err=>console.log(err));
     if(logedin){
@@ -18,7 +18,7 @@ export default function Reports() {
     }
   }, []);
   const handleDelete=(id)=>{
-    axios.delete('http://localhost:3002/deleteReport/'+id)
+    axios.delete('https://powerlendbackend.onrender.com/deleteReport/'+id)
     .then(e=>window.location.reload())
     .catch(err=>console.log(err))
   }

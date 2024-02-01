@@ -15,7 +15,7 @@ export default function EditProfile() {
     const navigate = useNavigate();
 
     useEffect(()=>{
-      axios.get("http://localhost:3002/getUpUser/"+id)
+      axios.get("https://powerlendbackend.onrender.com/getUpUser/"+id)
       .then(e=>{ console.log(e)
         setUsername(e.data.username)
         setEmail(e.data.email)  
@@ -27,7 +27,7 @@ export default function EditProfile() {
 
     const UpUser=(e)=>{
       e.preventDefault();
-      axios.put("http://localhost:3002/updateUser/"+id, {username, email, phone, address})
+      axios.put("https://powerlendbackend.onrender.com/updateUser/"+id, {username, email, phone, address})
       .then(()=>{
         navigate("/ProfilePage")
       }).catch(err=>console.log(err))

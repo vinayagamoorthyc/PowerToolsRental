@@ -18,7 +18,7 @@ export default function Users() {
     const logedin = window.localStorage.getItem("IsLogedIn");
 
     useEffect(()=>{
-        axios.get("http://localhost:3002/getUserDetails")
+        axios.get("https://powerlendbackend.onrender.com/getUserDetails")
         .then(e=>setUsers(e.data))
         .catch(err=>console.log(err));
         if(logedin){
@@ -28,7 +28,7 @@ export default function Users() {
         }
     }, []);
     const handleDelete=()=>{
-      axios.delete("http://localhost:3002/deleteUser/"+deleteuserid)
+      axios.delete("https://powerlendbackend.onrender.com/deleteUser/"+deleteuserid)
       .then(()=>window.location.reload())
       .catch(err=>console.log(err));
     }

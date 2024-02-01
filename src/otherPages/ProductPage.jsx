@@ -33,7 +33,7 @@ export default function ProductPage() {
     const logedin = window.localStorage.getItem("IsLogedIn");
 
   useEffect(()=>{
-    axios.get("http://localhost:3002/getUp/"+id)
+    axios.get("https://powerlendbackend.onrender.com/getUp/"+id)
       .then(e=>{ console.log(e)
         setProname(e.data.proname)
         setProrate(e.data.prorate)  
@@ -55,7 +55,7 @@ export default function ProductPage() {
     const InsertCart=(e)=>{
       e.preventDefault();
       setAvail(avail-1);
-      axios.post("http://localhost:3002/createCart/"+userid, {proname, prorate, days, imgurl})
+      axios.post("https://powerlendbackend.onrender.com/createCart/"+userid, {proname, prorate, days, imgurl})
       .then(()=>{
         handleShow();
       }).catch(err=>console.log(err))

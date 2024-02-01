@@ -29,7 +29,7 @@ export default function ProfilePage() {
 
 
   useEffect(()=>{
-    axios.get("http://localhost:3002/getUser/"+userid)
+    axios.get("https://powerlendbackend.onrender.com/getUser/"+userid)
     .then((e)=>{
       setUsername(e.data.username);
       setEmail(e.data.email);

@@ -28,7 +28,7 @@ function AppBar() {
   );
   useEffect(()=>{
     if(logedin){
-      axios.get('http://localhost:3002/getCart/'+userid)
+      axios.get('https://powerlendbackend.onrender.com/getCart/'+userid)
     .then(e =>setCartProducts(e.data))
     .catch(err=>console.log(err));
       setHide(false);
