@@ -54,6 +54,7 @@ export default function ProductPage() {
 
     const InsertCart=(e)=>{
       e.preventDefault();
+      setAvail(avail-1);
       axios.post("http://localhost:3002/createCart/"+userid, {proname, prorate, days, imgurl})
       .then(()=>{
         handleShow();

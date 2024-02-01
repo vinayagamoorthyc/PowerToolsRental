@@ -17,6 +17,7 @@ function AppBar() {
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
   const [cartProducts, setCartProducts]=useState([]);
+  const [subtotal, setSubtotal]=useState();
   const count = cartProducts.length;
   const [hide,setHide]=useState(true);
   const navigate = useNavigate();

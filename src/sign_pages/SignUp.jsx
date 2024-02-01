@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import 'typeface-montserrat';
 import Aos from 'aos';
 import axios from 'axios';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 export default function SignUp() {
 
@@ -12,12 +14,15 @@ export default function SignUp() {
   const [phone, setPhone]=useState();
   const [password, setPassword]=useState();
   const navigate = useNavigate();
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleSubmit=(e)=>{
     e.preventDefault();
     axios.post("http://localhost:3002/register", {username, email, phone, password})
     .then((e)=>{
-      navigate("/SignIn");
+      handleShow()
     }).catch(err=>console.log(err))
   }
 
@@ -87,6 +92,18 @@ export default function SignUp() {
     </div>
     </div>
     </div>
+    <Modal show={show} onHide={handleClose} backdrop="static" contentClassName='modal-bg'>
+                    <Modal.Header>
+                      <Modal.Title>Registered Successfully!</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>You created an account successfully and now you can login with your Email and Password.
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="warning" onClick={()=>navigate("/SignIn")}>
+                        Ok
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
     </div>
   )
 }

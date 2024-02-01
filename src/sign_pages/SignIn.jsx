@@ -5,12 +5,17 @@ import { Link, useNavigate } from 'react-router-dom';
 import 'typeface-montserrat';
 import Aos from 'aos';
 import axios from 'axios';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 export default function SignIn() {
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   axios.defaults.withCredentials = true;
 
@@ -27,7 +32,7 @@ export default function SignIn() {
           navigate("/");
         }
       }else{
-        alert("error")
+        handleShow();
       }
     }).catch(err=>console.log(err))
   }
@@ -93,6 +98,18 @@ export default function SignIn() {
     </div>
     </div>
     </div>
+    <Modal show={show} onHide={handleClose} backdrop="static" contentClassName='modal-bg'>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Login Error!</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Check your Email or Password!<br/>Make sure that you have already registered or not!
+                    </Modal.Body>
+                    <Modal.Footer>
+                      <Button variant="warning" onClick={()=>handleClose()}>
+                        Ok
+                      </Button>
+                    </Modal.Footer>
+                  </Modal>
     </div>
   )
 }
