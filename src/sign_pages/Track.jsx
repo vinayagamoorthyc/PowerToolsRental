@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
 
 export default function Track() {
+  const [hide,setHide]=useState(true);
+  const logedin = window.localStorage.getItem("IsLogedIn");
+  useEffect(()=>{
+    if(logedin){
+      setHide(false);
+    }else{
+      setHide(true);
+    }
+  })
   return (
-    <div>
+    <div hidden={hide}>
         <div style={{padding:"5px"}}>
             <Link to="/AdminPortal"><button class="Back_Btn">
             <Link to='/AdminPortal' class="back_icon"><svg class="svg-icon" viewBox="0 0 20 20">
@@ -31,14 +40,14 @@ export default function Track() {
                   <tr key=''>
                     <td>154</td>
                     <td>Circular Saw</td>
-                    <td>Randip</td>
+                    <td>Randip Leon</td>
                     <td>Not Returned</td>
                     <td><button class="btn btn-warning" hidden={true}>Remove</button></td>
                   </tr>
                   <tr key=''>
                     <td>159</td>
                     <td>Vending cleaner</td>
-                    <td>Jeber son_gay</td>
+                    <td>Jeberson vedha Singh</td>
                     <td>Returned</td>
                     <td><button class="btn btn-warning">Remove</button></td>
                   </tr>

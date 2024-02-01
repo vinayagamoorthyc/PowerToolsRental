@@ -14,6 +14,7 @@ import Reports from './sign_pages/Reports';
 import Experience from './sign_pages/Experience';
 import CheckOut from './payments/CheckOut';
 import ProUpdate from './sign_pages/ProUpdate';
+import Users from './sign_pages/Users';
 
 function App() {
   const login = window.localStorage.getItem("IsLogedIn");
@@ -34,6 +35,7 @@ function App() {
         <Route path='/Experience' element={<Experience/>}/>
         <Route path='/CheckOut' element={<CheckOut/>}/>
         <Route path='/ProUpdate/:id' element={<ProUpdate/>}/>
+        <Route path='/Users' element={<Users/>}/>
       </Routes>
     </div>
   );

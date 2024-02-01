@@ -26,7 +26,7 @@ export default function AdminNav() {
             <Nav.Link href="/Track" style={{fontWeight:"500"}}>Track</Nav.Link>
             <Nav.Link href="/Reports" style={{fontWeight:"500"}}>Reports</Nav.Link>
             <Nav.Link href="/Experience" style={{fontWeight:"500"}}>Experience</Nav.Link>
-            <Nav.Link href="/UserControl" style={{fontWeight:"500"}}>Users</Nav.Link>
+            <Nav.Link href="/Users" style={{fontWeight:"500"}}>Users</Nav.Link>
           </Nav>
           <Nav>
           <button class="ui-btn" onClick={()=>Logout()}>

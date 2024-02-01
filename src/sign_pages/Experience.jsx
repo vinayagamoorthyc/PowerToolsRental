@@ -5,19 +5,26 @@ import axios from "axios";
 import { Link } from 'react-router-dom';
 
 export default function Experience() {
+    const [hide,setHide]=useState(true);
+    const logedin = window.localStorage.getItem("IsLogedIn");
 
     const [userexp, setUserexp] = useState([]);
     useEffect(()=>{
         axios.get('http://localhost:3002/getUserexp')
         .then(e =>setUserexp(e.data))
         .catch(err=>console.log(err));
+        if(logedin){
+            setHide(false);
+          }else{
+            setHide(true);
+          }
     }, []);
 
     const edata=userexp.map(e=>(
         <ExpTable name={e.name} experience={e.experience} _id={e._id}/>
       ));
   return (
-    <div>
+    <div hidden={hide}>
          <div style={{padding:"5px"}}>
             <Link to="/AdminPortal"><button class="Back_Btn">
             <Link to='/AdminPortal' class="back_icon"><svg class="svg-icon" viewBox="0 0 20 20">

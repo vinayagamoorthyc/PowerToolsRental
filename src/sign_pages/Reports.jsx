@@ -4,11 +4,18 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 export default function Reports() {
+  const [hide,setHide]=useState(true);
+  const logedin = window.localStorage.getItem("IsLogedIn");
   const [userreport, setUserreport] = useState([]);
   useEffect(()=>{
     axios.get('http://localhost:3002/getUserreport')
     .then(e =>setUserreport(e.data))
     .catch(err=>console.log(err));
+    if(logedin){
+      setHide(false);
+    }else{
+      setHide(true);
+    }
   }, []);
   const handleDelete=(id)=>{
     axios.delete('http://localhost:3002/deleteReport/'+id)
@@ -17,7 +24,7 @@ export default function Reports() {
   }
 
   return (
-    <div>
+    <div hidden={hide}>
       <div style={{padding:"5px"}}>
             <Link to="/AdminPortal"><button class="Back_Btn">
             <Link to='/AdminPortal' class="back_icon"><svg class="svg-icon" viewBox="0 0 20 20">
