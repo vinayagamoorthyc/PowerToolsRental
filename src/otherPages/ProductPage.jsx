@@ -112,7 +112,7 @@ export default function ProductPage() {
                     <i class="bi bi-cart"></i>
                   </div>
                 </button>
-                <p hidden={!hide}>Please! SignIn to add this product to your Cart!</p>
+                <p hidden={!hide} style={{fontWeight:"bold"}}>Please! SignIn to add this product to your Cart!</p>
               </p>
             </div>
             </form>
