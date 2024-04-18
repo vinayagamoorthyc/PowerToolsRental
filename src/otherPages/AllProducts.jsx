@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 import Footer from '../components/Footer';
 import 'typeface-montserrat';
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function AllProducts() {
   const [products,setProducts]=useState([]);
