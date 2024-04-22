@@ -24,9 +24,10 @@ export default function SignIn() {
     setLoad(false);
     e.preventDefault();
     axios.post("https://powerlendbackend.onrender.com/login", {email, password})
-    .then((res)=>{window.localStorage.setItem("IsLogedIn", true);
-    window.localStorage.setItem("userid", res.data.id);
-    window.localStorage.setItem("token", res.data.tok);
+    .then((res)=>{
+      window.localStorage.setItem("IsLogedIn", true);
+      window.localStorage.setItem("userid", res.data.id);
+      window.localStorage.setItem("token", res.data.tok);
       if(res.data.Status === "success"){
         setLoad(true);
         if(res.data.role === "admin"){
