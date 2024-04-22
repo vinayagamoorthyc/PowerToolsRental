@@ -30,7 +30,7 @@ export default function ProductPage() {
     const [days,setDays]=useState();
     const navigate = useNavigate();
     const [hide,setHide]=useState(true);
-    const logedin = window.localStorage.getItem("IsLogedIn");
+    const token = window.localStorage.getItem("token");
 
   useEffect(()=>{
     axios.get("https://powerlendbackend.onrender.com/getUp/"+id)
@@ -44,7 +44,7 @@ export default function ProductPage() {
         setImgurl(e.data.imgurl)
       })
       .catch(err=>console.log(err));
-      if(logedin){
+      if(token!=null){
         setHide(false);
       }else{
         setHide(true);

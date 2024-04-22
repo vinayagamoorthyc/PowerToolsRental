@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 
 export default function Track() {
   const [hide,setHide]=useState(true);
-  const logedin = window.localStorage.getItem("IsLogedIn");
+  const token = window.localStorage.getItem("token");
+
   useEffect(()=>{
-    if(logedin){
+    if(token!=null){
       setHide(false);
     }else{
       setHide(true);

@@ -15,13 +15,13 @@ export default function Users() {
     const [deleteuserid,setDeleteuserid]=useState();
 
     const [hide,setHide]=useState(true);
-    const logedin = window.localStorage.getItem("IsLogedIn");
+    const token = window.localStorage.getItem("token");
 
     useEffect(()=>{
         axios.get("https://powerlendbackend.onrender.com/getUserDetails")
         .then(e=>setUsers(e.data))
         .catch(err=>console.log(err));
-        if(logedin){
+        if(token!=null){
           setHide(false);
         }else{
           setHide(true);

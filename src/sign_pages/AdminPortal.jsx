@@ -21,12 +21,12 @@ export default function AdminPortal() {
     const handleShow2 = () => setShow2(true);
     axios.defaults.withCredentials = true;
     const [hide,setHide]=useState(true);
-    const logedin = window.localStorage.getItem("IsLogedIn");
     const [deleteproid,setDeleteproid]=useState();
+    const token = window.localStorage.getItem("token");
     
     useEffect(()=>{
       
-      if(logedin){
+      if(token!=null){
         axios.get('https://powerlendbackend.onrender.com/getProduct')
       .then(res =>setProducts(res.data))
       .catch(err=>console.log(err));

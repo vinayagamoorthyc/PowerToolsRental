@@ -23,7 +23,6 @@ function AppBar() {
   
 
   const navigate = useNavigate();
-  const logedin = window.localStorage.getItem("IsLogedIn");
   const userid = window.localStorage.getItem("userid");
   const token = window.localStorage.getItem("token");
   const cartpros=cartProducts.map(e=>

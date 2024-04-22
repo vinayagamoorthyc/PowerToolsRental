@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom';
 
 export default function Reports() {
   const [hide,setHide]=useState(true);
-  const logedin = window.localStorage.getItem("IsLogedIn");
   const [userreport, setUserreport] = useState([]);
+  const token = window.localStorage.getItem("token");
+
   useEffect(()=>{
     axios.get('https://powerlendbackend.onrender.com/getUserreport')
     .then(e =>setUserreport(e.data))
     .catch(err=>console.log(err));
-    if(logedin){
+    if(token!=null){
       setHide(false);
     }else{
       setHide(true);
