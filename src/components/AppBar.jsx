@@ -30,7 +30,7 @@ function AppBar() {
     <CartDetails imgurl={e.imgurl} proname={e.proname} _id={e._id} prorate={e.prorate} days={e.days}/>
   );
   useEffect(()=>{
-    if(token.length>0){
+    if(token!=null){
       axios.get('https://powerlendbackend.onrender.com/getCart/'+userid)
     .then(e =>setCartProducts(e.data))
     .catch(err=>console.log(err));
