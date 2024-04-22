@@ -4,12 +4,17 @@ import Products from './Products';
 import 'typeface-montserrat';
 import axios from 'axios';
 
-export default function TopCat(props) {
+export default function TopCat() {
 
     const [products,setProducts]=useState([]);
+    const [load,setLoad] = useState(false);
+
     useEffect(()=>{
         axios.get('https://powerlendbackend.onrender.com/getProduct')
-        .then(e =>setProducts(e.data))
+        .then(e =>{
+            setProducts(e.data);
+            setLoad(true);
+        })
         .catch(err=>console.log(err));
         }, []);
 
@@ -22,7 +27,7 @@ export default function TopCat(props) {
             <center>
                 <div className='card_grid'>
                     {product}
-                    <div class="loader"></div>
+                    <div hidden={load} class="loader"></div>
                 </div>
                 </center>
         </div>
