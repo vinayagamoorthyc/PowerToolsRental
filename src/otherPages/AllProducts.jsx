@@ -12,10 +12,14 @@ import { Link } from 'react-router-dom';
 
 export default function AllProducts() {
   const [products,setProducts]=useState([]);
+  const [load,setLoad] = useState(false);
 
   useEffect(()=>{
     axios.get('https://powerlendbackend.onrender.com/getProduct')
-    .then(e =>setProducts(e.data))
+    .then(e =>{
+      setProducts(e.data);
+      setLoad(true);
+    })
     .catch(err=>console.log(err));
     }, []);
 
@@ -75,6 +79,7 @@ export default function AllProducts() {
         {filteredProducts?.map(e=>(
          <ProductAll url={e.imgurl} name={e.proname} rate={e.prorate} desc={e.desc} avail={e.avail} _id={e._id}/>
         ))}
+         <div hidden={load} class="loader"></div>
         </div>
         <Footer/>
     </div>
