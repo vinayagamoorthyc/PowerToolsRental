@@ -20,6 +20,8 @@ function AppBar() {
   const [subtotal, setSubtotal]=useState();
   const count = cartProducts.length;
   const [hide,setHide]=useState(true);
+  
+
   const navigate = useNavigate();
   const logedin = window.localStorage.getItem("IsLogedIn");
   const userid = window.localStorage.getItem("userid");
