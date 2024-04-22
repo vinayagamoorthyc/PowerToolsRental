@@ -85,6 +85,12 @@
     font-family: Montserrat, sans-serif;
   }
 
+  @media (max-width:988px) {
+    .pro_details_view{
+      width: 90%;
+    }
+  }
+
   /* ---------------------rating style----------------- */
 
   .rating {

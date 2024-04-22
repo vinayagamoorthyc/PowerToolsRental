@@ -46,17 +46,16 @@ export default function Footer() {
     <MDBFooter style={{fontFamily:"Montserrat, sans-serif"}} className='text-center' id='footer' color='warning' bgColor='black'>
       <MDBContainer className='p-4'>
         <section className='mb-4'>
-          <a href="https://github.com/vinayagamoorthyc?tab=repositories/"><Button variant="outline-warning"><i class="bi bi-github"></i></Button></a>{' '}&nbsp;
+          <a href="https://github.com/vinayagamoorthyc?tab=repositories/" target='_blank'><Button variant="outline-warning"><i class="bi bi-github"></i></Button></a>{' '}&nbsp;
 
-          <a href="https://www.facebook.com/profile.php?id=100037768420533"><Button variant="outline-warning"><i class="bi bi-facebook"></i></Button></a>{' '}&nbsp;
+          <a href="https://www.facebook.com/profile.php?id=100037768420533" target='_blank'><Button variant="outline-warning"><i class="bi bi-facebook"></i></Button></a>{' '}&nbsp;
 
-          <a href="https://twitter.com/Vinayaga2709/"><Button variant="outline-warning"><i class="bi bi-twitter-x"></i></Button></a>{' '}&nbsp;
+          <a href="https://twitter.com/Vinayaga2709/" target='_blank'><Button variant="outline-warning"><i class="bi bi-twitter-x"></i></Button></a>{' '}&nbsp;
 
-          <a href="https://www.instagram.com/_.kolaru.__/"><Button variant="outline-warning"><i class="bi bi-instagram"></i></Button></a>{' '}&nbsp;
+          <a href="https://www.instagram.com/_.kolaru.__/" target='_blank'><Button variant="outline-warning"><i class="bi bi-instagram"></i></Button></a>{' '}&nbsp;
 
-          <a href="https://www.linkedin.com/in/vinayaga-moorthy-c-bb8284276/"><Button variant="outline-warning"><i class="bi bi-linkedin"></i></Button></a>{' '}&nbsp;
+          <a href="https://www.linkedin.com/in/vinayaga-moorthy-c-bb8284276/" target='_blank'><Button variant="outline-warning"><i class="bi bi-linkedin"></i></Button></a>{' '}&nbsp;
 
-          <a href="www.google.com"><Button variant="outline-warning"><i class="bi bi-google"></i></Button></a>{' '}
         </section>
 
         <section className='review'>
