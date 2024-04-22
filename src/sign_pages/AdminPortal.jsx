@@ -59,7 +59,11 @@ export default function AdminPortal() {
     }
 
   return (
-    <div hidden={hide}>
+    <div>
+      <div hidden={!hide}>
+        &nbsp;404 Page not found!<br/>&nbsp;Only Admin can access this page!
+      </div>
+      <div hidden={hide}>
       <AdminNav/>
         &nbsp;
         <div className='admin_view'>
@@ -170,6 +174,7 @@ export default function AdminPortal() {
                       </Button>
                     </Modal.Footer>
                   </Modal>
+    </div>
     </div>
   )
 }
