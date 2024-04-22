@@ -82,12 +82,14 @@
     justify-content: space-around;
     align-items: start;
     width: 40%;
+    padding: 15px;
     font-family: Montserrat, sans-serif;
   }
 
   @media (max-width:988px) {
     .pro_details_view{
       width: 90%;
+      padding: 20px;
     }
   }
 
