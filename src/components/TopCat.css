@@ -76,7 +76,7 @@ overflow: none;
 .card_grid{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   width: 95%;
   gap: 15px;
   overflow: scroll;
