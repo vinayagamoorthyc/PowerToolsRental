@@ -86,12 +86,20 @@
     font-family: Montserrat, sans-serif;
   }
 
+  .day_input{
+    display: flex;
+    flex-direction: column;
+  }
+
   @media (max-width:988px) {
     .pro_details_view{
       width: 90%;
       padding: 20px;
       align-items: center;
       text-align: center;
+    }
+    .day_input{
+      align-items: center;
     }
   }
 

@@ -96,10 +96,10 @@ export default function ProductPage() {
             </div>
             &nbsp;
             <form onSubmit={InsertCart}>
-            <div style={{display:"flex", flexDirection:"column"}}>
+            <div className='day_input'>
               <h5>How many days?</h5>
               <input type="number" required={true} placeholder='Required Days' onChange={(e)=>setDays(e.target.value)}
-              style={{border:"1.9px solid rgba(0, 0, 0, 0.707)", width:"78%"}}
+              style={{border:"1.9px solid rgba(0, 0, 0, 0.707)", width:"50%"}}
               disabled={hide}
               />
             </div>
