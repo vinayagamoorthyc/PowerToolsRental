@@ -20,3 +20,9 @@
     font-weight: bold;
     width: 64%;
 }
+
+@media (max-width:988px) {
+    .mainimage_details-view{
+        width: 90%;
+    }
+}
