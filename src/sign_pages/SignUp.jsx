@@ -17,12 +17,15 @@ export default function SignUp() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [load,setLoad] = useState(true);
 
   const handleSubmit=(e)=>{
+    setLoad(false);
     e.preventDefault();
     axios.post("https://powerlendbackend.onrender.com/register", {username, email, phone, password})
     .then((e)=>{
-      handleShow()
+      handleShow();
+      setLoad(true);
     }).catch(err=>console.log(err))
   }
 
@@ -68,7 +71,10 @@ export default function SignUp() {
             <span>Password</span>
           </label>
         </div>
-        <center><button className='register' type='submit'>Register</button></center>
+        <center>
+          <button className='register' type='submit' hidden={!load}>Register</button>
+          <div class="loader" hidden={load}></div>
+        </center>
       </form>
       <div class="signUp_content__forgot-buttons">
         <button>

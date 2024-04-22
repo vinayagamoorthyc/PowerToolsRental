@@ -16,16 +16,19 @@ export default function SignIn() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [load,setLoad] = useState(true);
 
   axios.defaults.withCredentials = true;
 
   const handleSubmit=(e)=>{
+    setLoad(false);
     e.preventDefault();
     axios.post("https://powerlendbackend.onrender.com/login", {email, password})
     .then((res)=>{window.localStorage.setItem("IsLogedIn", true);
     window.localStorage.setItem("userid", res.data.id);
     window.localStorage.setItem("token", res.data.tok);
       if(res.data.Status === "success"){
+        setLoad(true);
         if(res.data.role === "admin"){
           navigate("/AdminPortal");
         }else{
@@ -33,6 +36,7 @@ export default function SignIn() {
         }
       }else{
         handleShow();
+        setLoad(true);
       }
     }).catch(err=>console.log(err))
   }
@@ -70,7 +74,10 @@ export default function SignIn() {
             <span>Password</span>
           </label>
         </div>
-        <div className='login_btn'><button type='submit'>Log In</button></div>
+        <center>
+          <div className='login_btn'><button type='submit' hidden={!load}>Log In</button></div>
+          <div class="loader" hidden={load}></div>
+        </center>
       </form>
       <div class="content__or-text">
         <span></span>
