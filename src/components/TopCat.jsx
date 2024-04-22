@@ -22,6 +22,7 @@ export default function TopCat(props) {
             <center>
                 <div className='card_grid'>
                     {product}
+                    <div class="loader"></div>
                 </div>
                 </center>
         </div>
