@@ -25,11 +25,12 @@ function AppBar() {
   const navigate = useNavigate();
   const logedin = window.localStorage.getItem("IsLogedIn");
   const userid = window.localStorage.getItem("userid");
+  const token = window.localStorage.getItem("token");
   const cartpros=cartProducts.map(e=>
     <CartDetails imgurl={e.imgurl} proname={e.proname} _id={e._id} prorate={e.prorate} days={e.days}/>
   );
   useEffect(()=>{
-    if(logedin){
+    if(token.length>0){
       axios.get('https://powerlendbackend.onrender.com/getCart/'+userid)
     .then(e =>setCartProducts(e.data))
     .catch(err=>console.log(err));
