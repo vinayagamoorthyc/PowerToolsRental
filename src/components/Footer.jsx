@@ -135,7 +135,7 @@ export default function Footer() {
       </div>
       <Toaster 
       position='bottom-right'
-      toastOptions={{duration: 3000}}
+      toastOptions={{duration: 4000}}
       />
     </MDBFooter>
   );
