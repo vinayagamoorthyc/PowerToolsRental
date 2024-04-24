@@ -30,7 +30,6 @@ export default function Footer() {
   const SubmitExp=(e)=>{
     axios.post("https://powerlendbackend.onrender.com/createExperience", {name, experience})
     .then(res=> {console.log(res)
-      window.location.reload();
       toast.success('Experience Submitted')
     })
     .catch(err=>console.log(err))
@@ -39,7 +38,6 @@ export default function Footer() {
     axios.post("https://powerlendbackend.onrender.com/createReport", {repname, report})
     .then(()=>{
       alert("Thank you for submitting your error Report to us!")
-      window.location.reload();
       toast.success('Report Submitted')
     })
   }
@@ -133,7 +131,7 @@ export default function Footer() {
           PowerLend.com
         </Link>
       </div>
-      <Toaster toastOptions={{duration: 5000}}/>
+      <Toaster toastOptions={{duration: 3000}}/>
     </MDBFooter>
   );
 }
