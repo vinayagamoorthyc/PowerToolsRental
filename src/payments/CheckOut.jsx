@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import "../payments/CheckOut.css";
 import phonepe from "../asset/phonepe-1.svg";
+import toast, {Toaster} from "react-hot-toast";
 
 export default function CheckOut() {
     const {subtotal} = useParams();
@@ -35,7 +36,7 @@ export default function CheckOut() {
                         <form class="form-container__form" style={{gap:"1px"}}>
 
                         <div class="payment--options">
-                                    <button name="Paytm" type="button"> {/* Paytm */}
+                                    <button name="Paytm" type="button" onClick={()=>toast.success('Order was Placed')}> {/* Paytm */}
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         x="0"
@@ -55,10 +56,10 @@ export default function CheckOut() {
                                         ></path>
                                         </svg>
                                     </button>
-                                    <button name="PhonePay" type="button"> {/* PhonePay */}
+                                    <button name="PhonePay" type="button" onClick={()=>toast.success('Order was Placed')}> {/* PhonePay */}
                                         <img src={phonepe} alt="" width={80} />
                                     </button>
-                                    <button name="google-pay" type="button"> {/* GooglePay */}
+                                    <button name="google-pay" type="button" onClick={()=>toast.success('Order was Placed')}> {/* GooglePay */}
                                 <svg fill="none" viewBox="0 0 80 39" height="39" width="80" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_134_34)">
                                 <path fill="#5F6368" d="M37.8 19.7V29H34.8V6H42.6C44.5 6 46.3001 6.7 47.7001 8C49.1001 9.2 49.8 11 49.8 12.9C49.8 14.8 49.1001 16.5 47.7001 17.8C46.3001 19.1 44.6 19.8 42.6 19.8L37.8 19.7ZM37.8 8.8V16.8H42.8C43.9 16.8 45.0001 16.4 45.7001 15.6C47.3001 14.1 47.3 11.6 45.8 10.1L45.7001 10C44.9001 9.2 43.9 8.7 42.8 8.8H37.8Z"></path>
@@ -88,6 +89,9 @@ export default function CheckOut() {
             </div>
         <div>
         </div>
+        <Toaster
+        position='bottom-center'
+        />
     </center>
   )
 }
