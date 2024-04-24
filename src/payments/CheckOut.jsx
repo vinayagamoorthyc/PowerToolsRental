@@ -5,7 +5,7 @@ import phonepe from "../asset/phonepe-1.svg";
 
 export default function CheckOut() {
     const {subtotal} = useParams();
-    const total = subtotal+parseInt("24");
+    const total = parseInt(subtotal)+24;
   return (
     <center>
         <div className='payment_view' style={{fontFamily:"Montserrat, sans-serif",paddingTop:"20px"}}>
