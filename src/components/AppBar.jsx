@@ -17,7 +17,7 @@ function AppBar() {
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
   const [cartProducts, setCartProducts]=useState([]);
-  const [subtotal, setSubtotal]=useState();
+  const [subtotal, setSubtotal]=useState(0);
   const count = cartProducts.length;
   const [hide,setHide]=useState(true);
   
@@ -37,6 +37,11 @@ function AppBar() {
     }else{
       setHide(true);
     }
+    let total=0;
+    cartProducts.forEach((e)=>{
+      total+=e.prorate;
+    })
+    setSubtotal(total);
     }, []);
 
     
@@ -115,7 +120,7 @@ function AppBar() {
           </div>
         </Offcanvas.Body>
         <div><center>
-          <p style={{fontFamily:'Montserrat, sans-serif',fontWeight:"800",color:"black"}}>Sub Total: ₹ 0</p>
+          <p style={{fontFamily:'Montserrat, sans-serif',fontWeight:"800",color:"black"}}>Sub Total: ₹ {subtotal}</p>
           <Link to="/CheckOut">
               <button class="checkout_btn">
                 <b>Check Out</b>
