@@ -37,7 +37,7 @@ function AppBar() {
     }else{
       setHide(true);
     }
-    let total=0;
+    let total=200;
     cartProducts.forEach((e)=>{
       total+=e.prorate;
     })
