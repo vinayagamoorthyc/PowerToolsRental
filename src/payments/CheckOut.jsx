@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import "../payments/CheckOut.css";
 import phonepe from "../asset/phonepe-1.svg";
 
 export default function CheckOut() {
+    const {subtotal} = useParams();
   return (
     <center>
         <div className='payment_view' style={{fontFamily:"Montserrat, sans-serif",paddingTop:"20px"}}>
@@ -13,7 +14,7 @@ export default function CheckOut() {
                         <div class="form-container__header">
                         <p style={{fontWeight:"700",fontSize:"20px"}}><u>Order Summary</u></p>
                         <form class="form-container__form" style={{gap:"1px"}}>
-                            <p style={{fontWeight:"500",textAlign:"initial"}}><b style={{}}>Subtotal:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₹ 63.00-</p>
+                            <p style={{fontWeight:"500",textAlign:"initial"}}><b style={{}}>Subtotal:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₹ {subtotal}.00</p>
                             <p style={{fontWeight:"500",textAlign:"initial"}}><b>Shipping Address:</b>&nbsp;&nbsp;<u>No 7, Karpaga Vinayagar Nagar,Bus stop, Othakalmandapam</u></p>
                             <p style={{fontWeight:"500",textAlign:"initial"}}><b>shipping Fees:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FREE</p>
                             <p style={{fontWeight:"500",textAlign:"initial"}}><b>Sales Tax:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₹ 24.00</p>

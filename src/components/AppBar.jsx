@@ -121,7 +121,7 @@ function AppBar() {
         </Offcanvas.Body>
         <div><center>
           <p style={{fontFamily:'Montserrat, sans-serif',fontWeight:"800",color:"black"}}>Sub Total: ₹ {subtotal}</p>
-          <Link to="/CheckOut">
+          <Link to={`/CheckOut/${subtotal}`}>
               <button class="checkout_btn">
                 <b>Check Out</b>
               </button></Link>
