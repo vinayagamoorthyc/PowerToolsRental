@@ -133,7 +133,10 @@ export default function Footer() {
           PowerLend.com
         </Link>
       </div>
-      <Toaster toastOptions={{duration: 3000}}/>
+      <Toaster 
+      position='bottom-right'
+      toastOptions={{duration: 3000}}
+      />
     </MDBFooter>
   );
 }
