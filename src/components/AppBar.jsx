@@ -39,10 +39,10 @@ function AppBar() {
     }
     let total=0;
     cartProducts.forEach((e)=>{
-      total=total+e.prorate;
+      total += parseFloat(e.prorate);
     })
     setSubtotal(total);
-    }, []);
+    }, [cartProducts]);
 
     
 
