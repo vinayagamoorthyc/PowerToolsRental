@@ -10,6 +10,7 @@ import Button from 'react-bootstrap/Button';
 import 'typeface-montserrat';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Footer() {
   const [name, setName] = useState();
@@ -29,8 +30,8 @@ export default function Footer() {
   const SubmitExp=(e)=>{
     axios.post("https://powerlendbackend.onrender.com/createExperience", {name, experience})
     .then(res=> {console.log(res)
-      alert("Thank you for submitted your experience!")
-      window.location.reload()
+      window.location.reload();
+      toast.success('Experience Submitted')
     })
     .catch(err=>console.log(err))
   }
@@ -38,7 +39,8 @@ export default function Footer() {
     axios.post("https://powerlendbackend.onrender.com/createReport", {repname, report})
     .then(()=>{
       alert("Thank you for submitting your error Report to us!")
-      window.location.reload()
+      window.location.reload();
+      toast.success('Report Submitted')
     })
   }
 
@@ -131,6 +133,7 @@ export default function Footer() {
           PowerLend.com
         </Link>
       </div>
+      <Toaster toastOptions={{duration: 5000}}/>
     </MDBFooter>
   );
 }
