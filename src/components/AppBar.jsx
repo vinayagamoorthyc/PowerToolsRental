@@ -37,9 +37,9 @@ function AppBar() {
     }else{
       setHide(true);
     }
-    let total=200;
+    let total=0;
     cartProducts.forEach((e)=>{
-      total+=e.prorate;
+      total=total+e.prorate;
     })
     setSubtotal(total);
     }, []);
