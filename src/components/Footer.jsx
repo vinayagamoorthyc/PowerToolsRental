@@ -28,6 +28,7 @@ export default function Footer() {
     }
   }, []);
   const SubmitExp=(e)=>{
+    e.preventDefault();
     axios.post("https://powerlendbackend.onrender.com/createExperience", {name, experience})
     .then(res=> {console.log(res)
       toast.success('Experience Submitted')
@@ -35,11 +36,12 @@ export default function Footer() {
     .catch(err=>console.log(err))
   }
   const SubmitReport=(e)=>{
+    e.preventDefault();
     axios.post("https://powerlendbackend.onrender.com/createReport", {repname, report})
     .then(()=>{
-      alert("Thank you for submitting your error Report to us!")
       toast.success('Report Submitted')
     })
+    .catch(err=>console.log(err));
   }
 
   return (
