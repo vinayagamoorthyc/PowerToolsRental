@@ -18,7 +18,7 @@ export default function CheckOut() {
                             <p style={{fontWeight:"500",textAlign:"initial"}}><b>Shipping Address:</b>&nbsp;&nbsp;<u>No 7, Karpaga Vinayagar Nagar,Bus stop, Othakalmandapam</u></p>
                             <p style={{fontWeight:"500",textAlign:"initial"}}><b>shipping Fees:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FREE</p>
                             <p style={{fontWeight:"500",textAlign:"initial"}}><b>Sales Tax:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₹ 24.00</p>
-                            <h4 style={{border:"1px solid black",backgroundColor:"black",color:"white",borderRadius:"5px"}}>Order Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ₹ 87.00</h4>
+                            <h4 style={{border:"1px solid black",backgroundColor:"black",color:"white",borderRadius:"5px"}}>Order Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ₹ {subtotal+24}.00</h4>
                         </form>
                         </div>
                     </div>
