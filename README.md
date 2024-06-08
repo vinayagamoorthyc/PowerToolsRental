@@ -4,4 +4,4 @@ This web application allows users to rent power tools online with ease. It featu
 
     -- PREVIEW --
 
-    
+![Screenshot 2024-06-08 at 10-51-38 Power Lend](https://github.com/vinayagamoorthyc/PowerToolsRental/assets/140414822/8af34b12-356f-4cab-8dcc-6e8a09858107)
